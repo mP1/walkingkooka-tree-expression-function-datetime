@@ -58,7 +58,7 @@ final class LocalDateExpressionFunctionDate<C extends ExpressionFunctionContext>
     private final static FunctionExpressionName NAME = FunctionExpressionName.with("date");
 
     @Override
-    public final List<ExpressionFunctionParameter<?>> parameters() {
+    public List<ExpressionFunctionParameter<?>> parameters() {
         return PARAMETERS;
     }
 
