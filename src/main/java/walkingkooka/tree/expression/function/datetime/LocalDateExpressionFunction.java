@@ -17,7 +17,6 @@
 
 package walkingkooka.tree.expression.function.datetime;
 
-import walkingkooka.tree.expression.ExpressionNumber;
 import walkingkooka.tree.expression.ExpressionPurityContext;
 import walkingkooka.tree.expression.function.ExpressionFunction;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
@@ -47,7 +46,7 @@ abstract class LocalDateExpressionFunction<C extends ExpressionFunctionContext> 
 
     @Override
     public final boolean isPure(ExpressionPurityContext expressionPurityContext) {
-        return true;
+        return !(this instanceof LocalDateExpressionFunctionToday);
     }
 
     @Override

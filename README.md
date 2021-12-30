@@ -26,6 +26,7 @@ Many more functions are outstanding and remain TODO.
 - minute(time)
 - month(date)
 - second(time)
+- today()
 - time(hour, minute, second)
 - weekday(date)
 - year(date)
