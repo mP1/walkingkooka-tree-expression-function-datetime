@@ -17,16 +17,12 @@
 
 package walkingkooka.tree.expression.function.datetime;
 
-import walkingkooka.Cast;
-import walkingkooka.tree.expression.ExpressionNumber;
 import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
 import java.time.LocalDate;
-import java.util.List;
-import java.util.function.Function;
 
 /**
  * Base for any date function.
@@ -36,11 +32,9 @@ abstract class NumberExpressionFunctionLocalDate<C extends ExpressionFunctionCon
     /**
      * Package private ctor
      */
-    NumberExpressionFunctionLocalDate(final String name,
-                                      final Function<LocalDate, Integer> mapper) {
+    NumberExpressionFunctionLocalDate(final String name) {
         super();
         this.name = FunctionExpressionName.with(name);
-        this.mapper = mapper;
     }
 
     @Override
@@ -49,8 +43,6 @@ abstract class NumberExpressionFunctionLocalDate<C extends ExpressionFunctionCon
     }
 
     private final FunctionExpressionName name;
-
-    final Function<LocalDate, Integer> mapper;
 
     final static ExpressionFunctionParameter<LocalDate> DATE = ExpressionFunctionParameterName.with("date")
             .setType(LocalDate.class);

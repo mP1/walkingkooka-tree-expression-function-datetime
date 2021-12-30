@@ -19,10 +19,8 @@ package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.Cast;
 import walkingkooka.tree.expression.ExpressionNumber;
-import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
-import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -87,7 +85,9 @@ final class NumberExpressionFunctionLocalDateComponent<C extends ExpressionFunct
      */
     private NumberExpressionFunctionLocalDateComponent(final String name,
                                                        final Function<LocalDate, Integer> mapper) {
-        super(name, mapper);
+        super(name);
+
+        this.mapper = mapper;
     }
 
     @Override
@@ -102,6 +102,8 @@ final class NumberExpressionFunctionLocalDateComponent<C extends ExpressionFunct
                         )
                 );
     }
+
+    private final Function<LocalDate, Integer> mapper;
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters() {
