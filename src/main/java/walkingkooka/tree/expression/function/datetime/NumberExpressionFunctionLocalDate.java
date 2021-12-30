@@ -29,100 +29,29 @@ import java.util.List;
 import java.util.function.Function;
 
 /**
- * Given a {@link LocalDate} extracts a component.
+ * Base for any date function.
  */
-final class NumberExpressionFunctionLocalDate<C extends ExpressionFunctionContext> extends NumberExpressionFunction<C> {
+abstract class NumberExpressionFunctionLocalDate<C extends ExpressionFunctionContext> extends NumberExpressionFunction<C> {
 
     /**
-     * DAY Instance getter.
+     * Package private ctor
      */
-    static <C extends ExpressionFunctionContext> NumberExpressionFunctionLocalDate<C> day() {
-        return Cast.to(DAY);
-    }
-
-    /**
-     * MONTH Instance getter.
-     * https://exceljet.net/excel-functions/excel-month-function
-     * <pre>
-     * The Excel MONTH function extracts the month from a given date as number between 1 to 12.
-     * </pre>
-     */
-    static <C extends ExpressionFunctionContext> NumberExpressionFunctionLocalDate<C> month() {
-        return Cast.to(MONTH);
-    }
-
-    /**
-     * YEAR Instance getter.
-     */
-    static <C extends ExpressionFunctionContext> NumberExpressionFunctionLocalDate<C> year() {
-        return Cast.to(YEAR);
-    }
-
-    /**
-     * DAY Singleton
-     */
-    private static final NumberExpressionFunctionLocalDate<?> DAY = new NumberExpressionFunctionLocalDate<>(
-            "day",
-            LocalDate::getDayOfMonth
-    );
-
-    /**
-     * MONTH Singleton
-     */
-    private static final NumberExpressionFunctionLocalDate<?> MONTH = new NumberExpressionFunctionLocalDate<>(
-            "month",
-            LocalDate::getMonthValue
-    );
-
-    /**
-     * YEAR Singleton
-     */
-    private static final NumberExpressionFunctionLocalDate<?> YEAR = new NumberExpressionFunctionLocalDate<>(
-            "year",
-            LocalDate::getYear
-    );
-
-    /**
-     * Private ctor
-     */
-    private NumberExpressionFunctionLocalDate(final String name,
-                                              final Function<LocalDate, Integer> mapper) {
+    NumberExpressionFunctionLocalDate(final String name,
+                                      final Function<LocalDate, Integer> mapper) {
         super();
         this.name = FunctionExpressionName.with(name);
         this.mapper = mapper;
     }
 
     @Override
-    public FunctionExpressionName name() {
+    public final FunctionExpressionName name() {
         return this.name;
     }
 
     private final FunctionExpressionName name;
 
-    @Override
-    public ExpressionNumber apply(final List<Object> parameters,
-                                  final C context) {
-        this.checkOnlyRequiredParameters(parameters);
-
-        return context.expressionNumberKind()
-                .create(
-                        this.mapper.apply(
-                                this.DATE.getOrFail(parameters, 0)
-                        )
-                );
-    }
-
-    private final Function<LocalDate, Integer> mapper;
-
-    @Override
-    public List<ExpressionFunctionParameter<?>> parameters() {
-        return PARAMETERS;
-    }
+    final Function<LocalDate, Integer> mapper;
 
     final static ExpressionFunctionParameter<LocalDate> DATE = ExpressionFunctionParameterName.with("date")
             .setType(LocalDate.class);
-
-    private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
-            DATE
-    );
 }
