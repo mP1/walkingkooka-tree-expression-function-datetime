@@ -45,7 +45,7 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
     }
 
     /**
-     * {@see NumberExpressionFunctionLocalDate}
+     * {@see NumberExpressionFunctionLocalDate#day}
      */
     public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> day() {
         return NumberExpressionFunctionLocalDate.day();
@@ -66,7 +66,7 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
     }
 
     /**
-     * {@see NumberExpressionFunctionLocalDate}
+     * {@see NumberExpressionFunctionLocalDate#month}
      */
     public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> month() {
         return NumberExpressionFunctionLocalDate.month();
@@ -80,7 +80,7 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
     }
 
     /**
-     * {@see NumberExpressionFunctionLocalDate}
+     * {@see NumberExpressionFunctionLocalDate#year}
      */
     public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> year() {
         return NumberExpressionFunctionLocalDate.year();
