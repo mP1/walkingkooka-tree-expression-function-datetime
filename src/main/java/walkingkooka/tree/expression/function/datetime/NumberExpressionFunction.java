@@ -34,7 +34,7 @@ abstract class NumberExpressionFunction<C extends ExpressionFunctionContext> imp
 
     @Override
     public final boolean lsLastParameterVariable() {
-        return false;
+        return this instanceof NumberExpressionFunctionLocalDateWeekdayWeekNum;
     }
 
     @Override

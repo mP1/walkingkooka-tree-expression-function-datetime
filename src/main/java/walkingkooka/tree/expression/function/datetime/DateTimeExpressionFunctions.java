@@ -40,6 +40,7 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
                 minute(),
                 month(),
                 second(),
+                weekday(),
                 year()
         ).forEach(consumer);
     }
@@ -77,6 +78,13 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
      */
     public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> second() {
         return NumberExpressionFunctionLocalTime.second();
+    }
+
+    /**
+     * {@see NumberExpressionFunctionLocalDateWeekdayWeekNum#weekday}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> weekday() {
+        return NumberExpressionFunctionLocalDateWeekdayWeekNum.weekday();
     }
 
     /**
