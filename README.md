@@ -20,3 +20,7 @@ NONE ATM
 
 Many more functions are outstanding and remain TODO.
 
+- day()
+- month()
+- year()
+- 

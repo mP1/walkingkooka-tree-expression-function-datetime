@@ -19,7 +19,9 @@ package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.collect.list.Lists;
 import walkingkooka.reflect.PublicStaticHelper;
+import walkingkooka.tree.expression.ExpressionNumber;
 import walkingkooka.tree.expression.function.ExpressionFunction;
+import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
 import java.util.function.Consumer;
 
@@ -33,7 +35,31 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
      */
     public static void visit(final Consumer<ExpressionFunction<?, ?>> consumer) {
         Lists.<ExpressionFunction<?, ?>>of(
+                day(),
+                month(),
+                year()
         ).forEach(consumer);
+    }
+
+    /**
+     * {@see NumberExpressionFunctionLocalDate}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> day() {
+        return NumberExpressionFunctionLocalDate.day();
+    }
+
+    /**
+     * {@see NumberExpressionFunctionLocalDate}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> month() {
+        return NumberExpressionFunctionLocalDate.month();
+    }
+
+    /**
+     * {@see NumberExpressionFunctionLocalDate}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> year() {
+        return NumberExpressionFunctionLocalDate.year();
     }
 
     /**
