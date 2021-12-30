@@ -44,6 +44,7 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
                 month(),
                 second(),
                 time(),
+                today(),
                 weekday(),
                 year()
         ).forEach(consumer);
@@ -96,6 +97,13 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
      */
     public static <C extends ExpressionFunctionContext> ExpressionFunction<LocalTime, C> time() {
         return LocalTimeExpressionFunctionTime.instance();
+    }
+
+    /**
+     * {@see LocalDateExpressionFunctionToday}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<LocalDate, C> today() {
+        return LocalDateExpressionFunctionToday.instance();
     }
 
     /**

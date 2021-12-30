@@ -21,15 +21,11 @@ import org.junit.jupiter.api.Test;
 import walkingkooka.reflect.ClassTesting2;
 import walkingkooka.reflect.JavaVisibility;
 import walkingkooka.reflect.TypeNameTesting;
-import walkingkooka.tree.expression.ExpressionPurityContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContexts;
 import walkingkooka.tree.expression.ExpressionPurityTesting;
-import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunction;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
-import walkingkooka.tree.expression.function.ExpressionFunctionContexts;
 import walkingkooka.tree.expression.function.ExpressionFunctionTesting;
-
-import java.util.List;
 
 public abstract class ExpressionFunctionTestCase<F extends ExpressionFunction<T, ExpressionFunctionContext>, T> implements ExpressionFunctionTesting<F, T, ExpressionFunctionContext>,
         ExpressionPurityTesting,
@@ -41,16 +37,13 @@ public abstract class ExpressionFunctionTestCase<F extends ExpressionFunction<T,
     }
 
     @Test
-    public final void testIsPureTrue() {
+    public final void testIsPure() {
+        final F function = this.createBiFunction();
+
         this.isPureAndCheck(
-                this.createBiFunction(),
-                new ExpressionPurityContext() {
-                    @Override
-                    public boolean isPure(final FunctionExpressionName name) {
-                        throw new UnsupportedOperationException();
-                    }
-                },
-                true
+                function,
+                ExpressionEvaluationContexts.fake(),
+                !(function instanceof LocalDateExpressionFunctionToday)
         );
     }
 
