@@ -28,8 +28,6 @@ public abstract class LocalTimeExpressionFunctionTestCase<F extends LocalTimeExp
 
     final static ExpressionNumberKind KIND = ExpressionNumberKind.DEFAULT;
 
-    final static int TWO_DIGIT_YEAR = 1900;
-
     LocalTimeExpressionFunctionTestCase() {
         super();
     }
