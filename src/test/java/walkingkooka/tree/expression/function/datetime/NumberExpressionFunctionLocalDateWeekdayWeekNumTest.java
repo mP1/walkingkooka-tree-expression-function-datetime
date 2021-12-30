@@ -38,7 +38,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     // https://exceljet.net/excel-functions/excel-weekday-function
 
     @Test
-    public void testWeekkday20210103() {
+    public void testWeekday20210103() {
         this.weekdayApplyAndCheck(
                 LocalDate.of(2021, 1, 3),
                 SUNDAY
@@ -46,7 +46,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20210103Type01() {
+    public void testWeekday20210103Type01() {
         this.weekdayApplyAndCheck(
                 LocalDate.of(2021, 1, 3),
                 1,
@@ -55,7 +55,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20210104Type01() {
+    public void testWeekday20210104Type01() {
         this.weekdayApplyAndCheck(
                 LocalDate.of(2021, 1, 4),
                 1,
@@ -64,7 +64,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20210105Type01() {
+    public void testWeekday20210105Type01() {
         this.weekdayApplyAndCheck(
                 LocalDate.of(2021, 1, 5),
                 1,
@@ -73,7 +73,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20210106Type01() {
+    public void testWeekday20210106Type01() {
         this.weekdayApplyAndCheck(
                 LocalDate.of(2021, 1, 6),
                 1,
@@ -82,7 +82,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20210107Type01() {
+    public void testWeekday20210107Type01() {
         this.weekdayApplyAndCheck(
                 LocalDate.of(2021, 1, 7),
                 1,
@@ -91,7 +91,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20210108Type01() {
+    public void testWeekday20210108Type01() {
         this.weekdayApplyAndCheck(
                 LocalDate.of(2021, 1, 8),
                 1,
@@ -100,7 +100,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20210109Type01() {
+    public void testWeekday20210109Type01() {
         this.weekdayApplyAndCheck(
                 LocalDate.of(2021, 1, 9),
                 1,
@@ -109,7 +109,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20210103Type02() {
+    public void testWeekday20210103Type02() {
         this.weekdayApplyAndCheck(
                 LocalDate.of(2021, 1, 3),
                 2,
@@ -118,7 +118,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20210104Type02() {
+    public void testWeekday20210104Type02() {
         this.weekdayApplyAndCheck(
                 LocalDate.of(2021, 1, 4),
                 2,
@@ -127,7 +127,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20210105Type02() {
+    public void testWeekday20210105Type02() {
         this.weekdayApplyAndCheck(
                 LocalDate.of(2021, 1, 5),
                 2,
@@ -136,7 +136,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20210106Type02() {
+    public void testWeekday20210106Type02() {
         this.weekdayApplyAndCheck(
                 LocalDate.of(2021, 1, 6),
                 2,
@@ -145,7 +145,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20210107Type02() {
+    public void testWeekday20210107Type02() {
         this.weekdayApplyAndCheck(
                 LocalDate.of(2021, 1, 7),
                 2,
@@ -154,7 +154,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20210108Type02() {
+    public void testWeekday20210108Type02() {
         this.weekdayApplyAndCheck(
                 LocalDate.of(2021, 1, 8),
                 2,
@@ -163,7 +163,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20210109Type02() {
+    public void testWeekday20210109Type02() {
         this.weekdayApplyAndCheck(
                 LocalDate.of(2021, 1, 9),
                 2,
@@ -174,7 +174,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     // https://support.microsoft.com/en-us/office/weekday-function-60e44483-2ed1-439f-8bd0-e404c190949a
 
     @Test
-    public void testWeekkday20080214() {
+    public void testWeekday20080214() {
         this.weekdayApplyAndCheck(
                 LocalDate.of(2008, 2, 14),
                 THURSDAY
@@ -182,7 +182,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20080214Type02() {
+    public void testWeekday20080214Type02() {
         this.weekdayApplyAndCheck(
                 LocalDate.of(2008, 2, 14),
                 2,
@@ -191,7 +191,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20080214Type03() {
+    public void testWeekday20080214Type03() {
         this.weekdayApplyAndCheck(
                 LocalDate.of(2008, 2, 14),
                 3,
@@ -212,7 +212,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     //7	=weekday(30/12/2021,17)
 
     @Test
-    public void testWeekkday20211230Type11() {
+    public void testWeekday20211230Type11() {
         this.weekdayApplyAndCheck(
                 11,
                 FRIDAY
@@ -220,7 +220,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20211230Type12() {
+    public void testWeekday20211230Type12() {
         this.weekdayApplyAndCheck(
                 12,
                 THURSDAY
@@ -228,7 +228,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20211230Type13() {
+    public void testWeekday20211230Type13() {
         this.weekdayApplyAndCheck(
                 13,
                 WEDNESDAY
@@ -236,7 +236,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20211230Type14() {
+    public void testWeekday20211230Type14() {
         this.weekdayApplyAndCheck(
                 14,
                 TUESDAY
@@ -244,7 +244,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20211230Type15() {
+    public void testWeekday20211230Type15() {
         this.weekdayApplyAndCheck(
                 15,
                 MONDAY
@@ -252,7 +252,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20211230Type16() {
+    public void testWeekday20211230Type16() {
         this.weekdayApplyAndCheck(
                 16,
                 SUNDAY
@@ -260,7 +260,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Test
-    public void testWeekkday20211230Type17() {
+    public void testWeekday20211230Type17() {
         this.weekdayApplyAndCheck(
                 17,
                 SATURDAY
