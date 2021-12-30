@@ -24,6 +24,7 @@ import walkingkooka.tree.expression.function.ExpressionFunction;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.function.Consumer;
 
@@ -42,6 +43,7 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
                 hour(),
                 minute(),
                 month(),
+                now(),
                 second(),
                 time(),
                 today(),
@@ -83,6 +85,13 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
      */
     public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> month() {
         return NumberExpressionFunctionLocalDateComponent.month();
+    }
+
+    /**
+     * {@see LocalDateTimeExpressionFunctionNow}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<LocalDateTime, C> now() {
+        return LocalDateTimeExpressionFunctionNow.instance();
     }
 
     /**

@@ -43,7 +43,7 @@ public abstract class ExpressionFunctionTestCase<F extends ExpressionFunction<T,
         this.isPureAndCheck(
                 function,
                 ExpressionEvaluationContexts.fake(),
-                !(function instanceof LocalDateExpressionFunctionToday)
+                !(function instanceof LocalDateExpressionFunctionToday || function instanceof LocalDateTimeExpressionFunctionNow)
         );
     }
 
