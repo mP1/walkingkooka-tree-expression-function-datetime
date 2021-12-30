@@ -18,7 +18,6 @@
 
 package walkingkooka.tree.expression.function.datetime;
 
-import walkingkooka.tree.expression.ExpressionNumber;
 import walkingkooka.tree.expression.ExpressionNumberKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.FakeExpressionFunctionContext;
