@@ -23,6 +23,7 @@ import walkingkooka.tree.expression.ExpressionNumber;
 import walkingkooka.tree.expression.function.ExpressionFunction;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
+import java.time.LocalDate;
 import java.util.function.Consumer;
 
 /**
@@ -34,7 +35,8 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
      * Visit all {@link ExpressionFunction functions}.
      */
     public static void visit(final Consumer<ExpressionFunction<?, ?>> consumer) {
-        Lists.<ExpressionFunction<?, ?>>of(
+        Lists.of(
+                date(),
                 day(),
                 hour(),
                 minute(),
@@ -43,6 +45,13 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
                 weekday(),
                 year()
         ).forEach(consumer);
+    }
+
+    /**
+     * {@see LocalDateExpressionFunctionDate}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<LocalDate, C> date() {
+        return LocalDateExpressionFunctionDate.instance();
     }
 
     /**
