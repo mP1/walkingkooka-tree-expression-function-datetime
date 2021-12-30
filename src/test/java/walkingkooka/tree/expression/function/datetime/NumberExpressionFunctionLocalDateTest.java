@@ -17,80 +17,20 @@
 
 package walkingkooka.tree.expression.function.datetime;
 
-import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
-import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.reflect.ClassTesting;
+import walkingkooka.reflect.JavaVisibility;
+import walkingkooka.tree.expression.function.FakeExpressionFunctionContext;
 
-import java.time.LocalDate;
-
-public final class NumberExpressionFunctionLocalDateTest extends NumberExpressionFunctionTestCase<NumberExpressionFunctionLocalDate<ExpressionFunctionContext>> {
-
-    private final static LocalDate DATE = LocalDate.of(1999, 12, 31);
-
-    @Test
-    public void testDay() {
-        this.applyAndCheck3(
-                NumberExpressionFunctionLocalDate.day(),
-                31
-        );
-    }
-
-    @Test
-    public void testMonth() {
-        this.applyAndCheck3(
-                NumberExpressionFunctionLocalDate.month(),
-                12
-        );
-    }
-
-    @Test
-    public void testYear() {
-        this.applyAndCheck3(
-                NumberExpressionFunctionLocalDate.year(),
-                1999
-        );
-    }
-
-    private void applyAndCheck3(final NumberExpressionFunctionLocalDate<ExpressionFunctionContext> function, final int expected) {
-        this.applyAndCheck2(
-                function,
-                Lists.of(DATE),
-                KIND.create(expected)
-        );
-    }
-
-    @Test
-    public void testToStringDay() {
-        this.toStringAndCheck(
-                NumberExpressionFunctionLocalDate.day(),
-                "day"
-        );
-    }
-
-    @Test
-    public void testToStringMonth() {
-        this.toStringAndCheck(
-                NumberExpressionFunctionLocalDate.month(),
-                "month"
-        );
-    }
-
-    @Test
-    public void testToStringYear() {
-        this.toStringAndCheck(
-                NumberExpressionFunctionLocalDate.year(),
-                "year"
-        );
-    }
+public final class NumberExpressionFunctionLocalDateTest implements ClassTesting<NumberExpressionFunctionLocalDate<FakeExpressionFunctionContext>> {
 
     @Override
-    public NumberExpressionFunctionLocalDate<ExpressionFunctionContext> createBiFunction() {
-        return NumberExpressionFunctionLocalDate.day();
-    }
-
-    @Override
-    public Class<NumberExpressionFunctionLocalDate<ExpressionFunctionContext>> type() {
+    public Class<NumberExpressionFunctionLocalDate<FakeExpressionFunctionContext>> type() {
         return Cast.to(NumberExpressionFunctionLocalDate.class);
+    }
+
+    @Override
+    public JavaVisibility typeVisibility() {
+        return JavaVisibility.PACKAGE_PRIVATE;
     }
 }
