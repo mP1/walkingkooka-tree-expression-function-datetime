@@ -36,7 +36,10 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
     public static void visit(final Consumer<ExpressionFunction<?, ?>> consumer) {
         Lists.<ExpressionFunction<?, ?>>of(
                 day(),
+                hour(),
+                minute(),
                 month(),
+                second(),
                 year()
         ).forEach(consumer);
     }
@@ -49,10 +52,31 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
     }
 
     /**
+     * {@see NumberExpressionFunctionLocalTime#hour}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> hour() {
+        return NumberExpressionFunctionLocalTime.hour();
+    }
+
+    /**
+     * {@see NumberExpressionFunctionLocalTime#minute}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> minute() {
+        return NumberExpressionFunctionLocalTime.minute();
+    }
+
+    /**
      * {@see NumberExpressionFunctionLocalDate}
      */
     public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> month() {
         return NumberExpressionFunctionLocalDate.month();
+    }
+
+    /**
+     * {@see NumberExpressionFunctionLocalTime#second}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> second() {
+        return NumberExpressionFunctionLocalTime.second();
     }
 
     /**

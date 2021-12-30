@@ -43,7 +43,7 @@ public final class DateTimeExpressionFunctionsTest implements PublicStaticHelper
                         .collect(Collectors.toCollection(Sets::sorted))
                         .size(),
                 names.size());
-        //this.checkEquals(true, names.contains(DateTimeExpressionFunctions.now().name()));
+        this.checkEquals(true, names.contains(DateTimeExpressionFunctions.hour().name()));
     }
 
     @Test
