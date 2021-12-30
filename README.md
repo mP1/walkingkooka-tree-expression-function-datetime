@@ -20,7 +20,11 @@ NONE ATM
 
 Many more functions are outstanding and remain TODO.
 
-- day()
-- month()
-- year()
-- 
+- date(year, month, day)
+- day(date)
+- hour(time)
+- minute(time)
+- month(date)
+- second(time)
+- weekday(date)
+- year(date)
