@@ -22,6 +22,7 @@ import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -301,6 +302,437 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
         );
     }
 
+    // https://exceljet.net/excel-functions/excel-weeknum-function
+
+    @Test
+    public void testWeeknum20210101Type1() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 1),
+                1,
+                1
+        );
+    }
+
+    @Test
+    public void testWeeknum20210102Type1() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 2),
+                1,
+                1
+        );
+    }
+
+    @Test
+    public void testWeeknum20210103Type1() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 3),
+                1,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210104Type1() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 4),
+                1,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210105Type1() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 5),
+                1,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210106Type1() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 6),
+                1,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210107Type1() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 7),
+                1,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210108Type1() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 8),
+                1,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210109Type1() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 9),
+                1,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210110Type1() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 10),
+                1,
+                3
+        );
+    }
+
+    @Test
+    public void testWeeknum20211231Type1() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 12, 31),
+                1,
+                53
+        );
+    }
+    
+    // type 2
+
+    @Test
+    public void testWeeknum20210101Type2() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 1),
+                2,
+                1
+        );
+    }
+
+    @Test
+    public void testWeeknum20210102Type2() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 2),
+                2,
+                1
+        );
+    }
+
+    @Test
+    public void testWeeknum20210103Type2() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 3),
+                2,
+                1
+        );
+    }
+
+    @Test
+    public void testWeeknum20210104Type2() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 4),
+                2,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210105Type2() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 5),
+                2,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210106Type2() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 6),
+                2,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210107Type2() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 7),
+                2,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210108Type2() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 8),
+                2,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210109Type2() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 9),
+                2,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210110Type2() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 10),
+                2,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210111Type2() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 11),
+                2,
+                3
+        );
+    }
+
+    @Test
+    public void testWeeknum20211231Type2() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 12, 31),
+                2,
+                53
+        );
+    }
+
+    // type 2
+
+    @Test
+    public void testWeeknum20210101Type12() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 1),
+                12,
+                1
+        );
+    }
+
+    @Test
+    public void testWeeknum20210102Type12() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 2),
+                12,
+                1
+        );
+    }
+
+    @Test
+    public void testWeeknum20210103Type12() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 3),
+                12,
+                1
+        );
+    }
+
+    @Test
+    public void testWeeknum20210104Type12() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 4),
+                12,
+                1
+        );
+    }
+
+    @Test
+    public void testWeeknum20210105Type12() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 5),
+                12,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210106Type12() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 6),
+                12,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210107Type12() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 7),
+                12,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210108Type12() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 8),
+                12,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210109Type12() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 9),
+                12,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210110Type12() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 10),
+                12,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20210111Type12() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 1, 11),
+                12,
+                2
+        );
+    }
+
+    @Test
+    public void testWeeknum20211231Type12() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 12, 31),
+                12,
+                53
+        );
+    }
+
+    @Test
+    public void testWeeknum20211231Type21() {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 12, 31),
+                21,
+                52
+        );
+    }
+
+    @Test
+    public void testWeeknumType1() {
+        this.testWeeknum(1, DayOfWeek.SUNDAY);
+    }
+
+    @Test
+    public void testWeeknumType2() {
+        this.testWeeknum(2, DayOfWeek.MONDAY);
+    }
+
+    @Test
+    public void testWeeknumType11() {
+        this.testWeeknum(11, DayOfWeek.MONDAY);
+    }
+
+    @Test
+    public void testWeeknumType12() {
+        this.testWeeknum(12, DayOfWeek.TUESDAY);
+    }
+
+    @Test
+    public void testWeeknumType13() {
+        this.testWeeknum(13, DayOfWeek.WEDNESDAY);
+    }
+
+    @Test
+    public void testWeeknumType14() {
+        this.testWeeknum(14, DayOfWeek.THURSDAY);
+    }
+
+    @Test
+    public void testWeeknumType15() {
+        this.testWeeknum(15, DayOfWeek.FRIDAY);
+    }
+
+    @Test
+    public void testWeeknumType16() {
+        this.testWeeknum(16, DayOfWeek.SATURDAY);
+    }
+
+    @Test
+    public void testWeeknumType17() {
+        this.testWeeknum(17, DayOfWeek.SUNDAY);
+    }
+
+    private void testWeeknum(final int type, final DayOfWeek dayOfWeek) {
+        for(int y = 2000; y < 2021; y++) {
+            final LocalDate date = LocalDate.of(y, 1, 1);
+            int week = 1;
+
+            for(int i = 0; i < 365; i++) {
+                final LocalDate date2 = date.plusDays(i);
+                if(i > 0 && date2.getDayOfWeek() == dayOfWeek) {
+                    week++;
+                }
+
+                this.weeknumApplyAndCheck(
+                        date2,
+                        type,
+                        week
+                );
+            }
+        }
+    }
+
+
+    private void weeknumApplyAndCheck(final int type,
+                                      final int expected) {
+        this.weeknumApplyAndCheck(
+                LocalDate.of(2021, 10, 30),
+                type,
+                expected
+        );
+    }
+
+    private void weeknumApplyAndCheck(final LocalDate date,
+                                      final int expected) {
+        this.weeknumApplyAndCheck(
+                Lists.of(date),
+                expected
+        );
+    }
+
+    private void weeknumApplyAndCheck(final LocalDate date,
+                                      final int type,
+                                      final int expected) {
+        this.weeknumApplyAndCheck(
+                Lists.of(date, KIND.create(type)),
+                expected
+        );
+    }
+
+    private void weeknumApplyAndCheck(final List<Object> parameters, final int expected) {
+        this.applyAndCheck2(
+                NumberExpressionFunctionLocalDateWeekdayWeekNum.weeknum(),
+                parameters,
+                KIND.create(expected)
+        );
+    }
+    // toString........................................................................................................
+    
     @Test
     public void testToStringWeekday() {
         this.toStringAndCheck(
