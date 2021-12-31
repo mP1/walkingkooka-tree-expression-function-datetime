@@ -25,6 +25,8 @@ import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.temporal.TemporalField;
+import java.time.temporal.WeekFields;
 import java.util.List;
 import java.util.function.BiFunction;
 
@@ -144,15 +146,65 @@ final class NumberExpressionFunctionLocalDateWeekdayWeekNum<C extends Expression
             }
     );
 
+    private final static String[] DOW = new String[]{
+            " SUNDAY", " MONDAY", " TUESDAY", " WEDNESDAY", " THURS", " FRIDAY", " SATURDAY"
+    };
+
+    // https://github.com/apache/poi/blob/trunk/poi/src/main/java/org/apache/poi/ss/formula/functions/WeekNum.java
+
+    private final static WeekFields SUNDAY_START = WeekFields.of(DayOfWeek.SUNDAY, 1);
+    private final static WeekFields MONDAY_START = WeekFields.of(DayOfWeek.MONDAY, 1);
+    private final static WeekFields TUESDAY_START = WeekFields.of(DayOfWeek.TUESDAY, 1);
+    private final static WeekFields WEDNESDAY_START = WeekFields.of(DayOfWeek.WEDNESDAY, 1);
+    private final static WeekFields THURSDAY_START = WeekFields.of(DayOfWeek.THURSDAY, 1);
+    private final static WeekFields FRIDAY_START = WeekFields.of(DayOfWeek.FRIDAY, 1);
+    private final static WeekFields SATURDAY_START = WeekFields.of(DayOfWeek.SATURDAY, 1);
+
     /**
      * WEEKNUM Singleton
      */
     private static final NumberExpressionFunctionLocalDateWeekdayWeekNum<?> WEEKNUM = new NumberExpressionFunctionLocalDateWeekdayWeekNum<>(
             "weeknum",
-            (d, type) -> {
-                throw new UnsupportedOperationException();
-            }
+            NumberExpressionFunctionLocalDateWeekdayWeekNum::weeknum
     );
+
+    private static int weeknum(final LocalDate d, final int type) {
+        final TemporalField weekOfYear;
+
+        switch (type) {
+            case 1:
+            case 17:
+                weekOfYear = SUNDAY_START.weekOfYear();
+                break;
+            case 2:
+            case 11:
+                weekOfYear = MONDAY_START.weekOfYear();
+                break;
+            case 12:
+                weekOfYear = TUESDAY_START.weekOfYear();
+                break;
+            case 13:
+                weekOfYear = WEDNESDAY_START.weekOfYear();
+                break;
+            case 14:
+                weekOfYear = THURSDAY_START.weekOfYear();
+                break;
+            case 15:
+                weekOfYear = FRIDAY_START.weekOfYear();
+                break;
+            case 16:
+                weekOfYear = SATURDAY_START.weekOfYear();
+                break;
+            case 21:
+                weekOfYear = WeekFields.ISO.weekOfYear();
+                break;
+            default:
+                // If return_type is out of the range specified in the table above, a #NUM! error is returned.
+                throw new IllegalArgumentException("Invalid type " + type);
+        }
+
+        return d.get(weekOfYear);
+    }
 
     /**
      * Private ctor
@@ -193,7 +245,6 @@ final class NumberExpressionFunctionLocalDateWeekdayWeekNum<C extends Expression
                         )
                 );
     }
-
 
     final static ExpressionFunctionParameter<ExpressionNumber> TYPE = ExpressionFunctionParameterName.with("type")
             .setType(ExpressionNumber.class);

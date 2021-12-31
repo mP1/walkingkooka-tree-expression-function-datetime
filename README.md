@@ -29,4 +29,5 @@ Many more functions are outstanding and remain TODO.
 - today()
 - time(hour, minute, second)
 - weekday(date)
+- weeknum(date, type)
 - year(date)
