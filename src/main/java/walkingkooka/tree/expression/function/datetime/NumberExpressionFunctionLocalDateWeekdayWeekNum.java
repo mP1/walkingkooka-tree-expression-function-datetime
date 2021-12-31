@@ -91,74 +91,58 @@ final class NumberExpressionFunctionLocalDateWeekdayWeekNum<C extends Expression
      */
     private static final NumberExpressionFunctionLocalDateWeekdayWeekNum<?> WEEKDAY = new NumberExpressionFunctionLocalDateWeekdayWeekNum<>(
             "weekday",
-            (d, type) -> {
-                final DayOfWeek dayOfWeek = d.getDayOfWeek();
-                final DayOfWeek start;
-                final int bias;
-
-                switch (type) {
-                    case 1:
-                        bias = 1;
-                        start = DayOfWeek.SUNDAY;
-                        break;
-                    case 2:
-                        bias = 1;
-                        start = DayOfWeek.MONDAY;
-                        break;
-                    case 3:
-                        bias = 0;
-                        start = DayOfWeek.MONDAY;
-                        break;
-                    case 11:
-                        bias = 1;
-                        start = DayOfWeek.MONDAY;
-                        break;
-                    case 12:
-                        bias = 1;
-                        start = DayOfWeek.TUESDAY;
-                        break;
-                    case 13:
-                        bias = 1;
-                        start = DayOfWeek.WEDNESDAY;
-                        break;
-                    case 14:
-                        bias = 1;
-                        start = DayOfWeek.THURSDAY;
-                        break;
-                    case 15:
-                        bias = 1;
-                        start = DayOfWeek.FRIDAY;
-                        break;
-                    case 16:
-                        bias = 1;
-                        start = DayOfWeek.SATURDAY;
-                        break;
-                    case 17:
-                        bias = 1;
-                        start = DayOfWeek.SUNDAY;
-                        break;
-                    default:
-                        // If return_type is out of the range specified in the table above, a #NUM! error is returned.
-                        throw new IllegalArgumentException("Invalid type " + type);
-                }
-
-                return bias + ((7 + dayOfWeek.getValue() - start.getValue()) % 7);
-            }
+            NumberExpressionFunctionLocalDateWeekdayWeekNum::weekday
     );
 
-    private final static String[] DOW = new String[]{
-            " SUNDAY", " MONDAY", " TUESDAY", " WEDNESDAY", " THURS", " FRIDAY", " SATURDAY"
-    };
+    private static int weekday(final LocalDate d, final int type) {
+        final DayOfWeek dayOfWeek = d.getDayOfWeek();
+        final DayOfWeek start;
+        final int bias;
+
+        switch (type) {
+            case 1:
+            case 17:
+                bias = 1;
+                start = DayOfWeek.SUNDAY;
+                break;
+            case 2:
+            case 11:
+                bias = 1;
+                start = DayOfWeek.MONDAY;
+                break;
+            case 3:
+                bias = 0;
+                start = DayOfWeek.MONDAY;
+                break;
+            case 12:
+                bias = 1;
+                start = DayOfWeek.TUESDAY;
+                break;
+            case 13:
+                bias = 1;
+                start = DayOfWeek.WEDNESDAY;
+                break;
+            case 14:
+                bias = 1;
+                start = DayOfWeek.THURSDAY;
+                break;
+            case 15:
+                bias = 1;
+                start = DayOfWeek.FRIDAY;
+                break;
+            case 16:
+                bias = 1;
+                start = DayOfWeek.SATURDAY;
+                break;
+            default:
+                // If return_type is out of the range specified in the table above, a #NUM! error is returned.
+                throw new IllegalArgumentException("Invalid type " + type);
+        }
+
+        return bias + ((7 + dayOfWeek.getValue() - start.getValue()) % 7);
+    }
 
     // https://github.com/apache/poi/blob/trunk/poi/src/main/java/org/apache/poi/ss/formula/functions/WeekNum.java
-
-    private final static WeekFields SUNDAY_START = WeekFields.of(DayOfWeek.SUNDAY, 1);
-    private final static WeekFields MONDAY_START = WeekFields.of(DayOfWeek.MONDAY, 1);
-    private final static WeekFields TUESDAY_START = WeekFields.of(DayOfWeek.TUESDAY, 1);
-    private final static WeekFields WEDNESDAY_START = WeekFields.of(DayOfWeek.WEDNESDAY, 1);
-    private final static WeekFields THURSDAY_START = WeekFields.of(DayOfWeek.THURSDAY, 1);
-    private final static WeekFields FRIDAY_START = WeekFields.of(DayOfWeek.FRIDAY, 1);
-    private final static WeekFields SATURDAY_START = WeekFields.of(DayOfWeek.SATURDAY, 1);
 
     /**
      * WEEKNUM Singleton
@@ -205,6 +189,14 @@ final class NumberExpressionFunctionLocalDateWeekdayWeekNum<C extends Expression
 
         return d.get(weekOfYear);
     }
+
+    private final static WeekFields SUNDAY_START = WeekFields.of(DayOfWeek.SUNDAY, 1);
+    private final static WeekFields MONDAY_START = WeekFields.of(DayOfWeek.MONDAY, 1);
+    private final static WeekFields TUESDAY_START = WeekFields.of(DayOfWeek.TUESDAY, 1);
+    private final static WeekFields WEDNESDAY_START = WeekFields.of(DayOfWeek.WEDNESDAY, 1);
+    private final static WeekFields THURSDAY_START = WeekFields.of(DayOfWeek.THURSDAY, 1);
+    private final static WeekFields FRIDAY_START = WeekFields.of(DayOfWeek.FRIDAY, 1);
+    private final static WeekFields SATURDAY_START = WeekFields.of(DayOfWeek.SATURDAY, 1);
 
     /**
      * Private ctor
