@@ -22,7 +22,6 @@ import walkingkooka.tree.expression.ExpressionNumber;
 import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
-import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
 import java.time.LocalTime;
 import java.util.List;
@@ -125,8 +124,7 @@ final class NumberExpressionFunctionLocalTime<C extends ExpressionFunctionContex
         return PARAMETERS;
     }
 
-    final static ExpressionFunctionParameter<LocalTime> TIME = ExpressionFunctionParameterName.with("time")
-            .setType(LocalTime.class);
+    final static ExpressionFunctionParameter<LocalTime> TIME = ExpressionFunctionParameter.TIME;
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             TIME
