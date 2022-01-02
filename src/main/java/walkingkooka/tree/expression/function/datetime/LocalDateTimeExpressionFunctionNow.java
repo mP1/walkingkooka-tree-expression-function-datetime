@@ -18,7 +18,6 @@
 package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
@@ -37,15 +36,8 @@ final class LocalDateTimeExpressionFunctionNow<C extends ExpressionFunctionConte
     private final static LocalDateTimeExpressionFunctionNow<?> INSTANCE = new LocalDateTimeExpressionFunctionNow<>();
 
     private LocalDateTimeExpressionFunctionNow() {
-        super();
+        super("now");
     }
-
-    @Override
-    public FunctionExpressionName name() {
-        return NAME;
-    }
-
-    private final static FunctionExpressionName NAME = FunctionExpressionName.with("now");
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters() {
