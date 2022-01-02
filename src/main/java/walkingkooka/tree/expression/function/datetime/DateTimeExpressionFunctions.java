@@ -39,6 +39,7 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
     public static void visit(final Consumer<ExpressionFunction<?, ?>> consumer) {
         Lists.of(
                 date(),
+                dateMonthAdd(),
                 day(),
                 days(),
                 hour(),
@@ -60,6 +61,13 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
      */
     public static <C extends ExpressionFunctionContext> ExpressionFunction<LocalDate, C> date() {
         return LocalDateExpressionFunctionDate.instance();
+    }
+
+    /**
+     * {@see LocalDateExpressionFunctionDateMonthAdd}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<LocalDate, C> dateMonthAdd() {
+        return LocalDateExpressionFunctionDateMonthAdd.instance();
     }
 
     /**

@@ -17,6 +17,7 @@ A collection of ExpressionFunction(s) that operate and return date or time like 
 Many more functions are outstanding and remain TODO.
 
 - date(year, month, day)
+- dateAddMonth(date, number)
 - day(date)
 - days(date1, date2)
 - hour(time)
