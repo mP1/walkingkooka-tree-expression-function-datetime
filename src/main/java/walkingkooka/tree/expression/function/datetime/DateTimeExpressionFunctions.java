@@ -40,6 +40,7 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
         Lists.of(
                 date(),
                 day(),
+                days(),
                 hour(),
                 isoWeekNum(),
                 minute(),
@@ -66,6 +67,13 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
      */
     public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> day() {
         return NumberExpressionFunctionLocalDateComponent.day();
+    }
+
+    /**
+     * {@see NumberExpressionFunctionDays}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> days() {
+        return NumberExpressionFunctionDays.instance();
     }
 
     /**
