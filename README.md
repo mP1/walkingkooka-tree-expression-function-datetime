@@ -14,10 +14,6 @@ A collection of ExpressionFunction(s) that operate and return date or time like 
 
 ## Available functions
 
-NONE ATM
-
-
-
 Many more functions are outstanding and remain TODO.
 
 - date(year, month, day)
@@ -33,3 +29,5 @@ Many more functions are outstanding and remain TODO.
 - weekday(date)
 - weeknum(date, type)
 - year(date)
+
+[TODO](https://github.com/mP1/walkingkooka-tree-expression-function-datetime/issues)
