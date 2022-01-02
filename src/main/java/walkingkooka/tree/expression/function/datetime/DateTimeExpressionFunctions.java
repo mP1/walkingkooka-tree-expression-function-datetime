@@ -41,6 +41,7 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
                 date(),
                 day(),
                 hour(),
+                isoWeekNum(),
                 minute(),
                 month(),
                 now(),
@@ -71,6 +72,13 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
      */
     public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> hour() {
         return NumberExpressionFunctionLocalTime.hour();
+    }
+
+    /**
+     * {@see NumberExpressionFunctionIsoWeekNum}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> isoWeekNum() {
+        return NumberExpressionFunctionIsoWeekNum.instance();
     }
 
     /**
