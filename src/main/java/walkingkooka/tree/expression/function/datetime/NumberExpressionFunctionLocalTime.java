@@ -19,7 +19,6 @@ package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.Cast;
 import walkingkooka.tree.expression.ExpressionNumber;
-import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
@@ -92,17 +91,9 @@ final class NumberExpressionFunctionLocalTime<C extends ExpressionFunctionContex
      */
     private NumberExpressionFunctionLocalTime(final String name,
                                               final Function<LocalTime, Integer> mapper) {
-        super();
-        this.name = FunctionExpressionName.with(name);
+        super(name);
         this.mapper = mapper;
     }
-
-    @Override
-    public FunctionExpressionName name() {
-        return this.name;
-    }
-
-    private final FunctionExpressionName name;
 
     @Override
     public ExpressionNumber apply(final List<Object> parameters,
