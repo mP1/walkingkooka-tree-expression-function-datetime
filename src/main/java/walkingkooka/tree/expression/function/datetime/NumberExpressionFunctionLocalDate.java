@@ -17,7 +17,6 @@
 
 package walkingkooka.tree.expression.function.datetime;
 
-import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
@@ -32,16 +31,8 @@ abstract class NumberExpressionFunctionLocalDate<C extends ExpressionFunctionCon
      * Package private ctor
      */
     NumberExpressionFunctionLocalDate(final String name) {
-        super();
-        this.name = FunctionExpressionName.with(name);
+        super(name);
     }
-
-    @Override
-    public final FunctionExpressionName name() {
-        return this.name;
-    }
-
-    private final FunctionExpressionName name;
 
     final static ExpressionFunctionParameter<LocalDate> DATE = ExpressionFunctionParameter.DATE;
 }
