@@ -18,6 +18,7 @@
 package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.tree.expression.ExpressionPurityContext;
+import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunction;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
@@ -25,9 +26,17 @@ import java.time.LocalTime;
 
 abstract class LocalTimeExpressionFunction<C extends ExpressionFunctionContext> implements ExpressionFunction<LocalTime, C> {
 
-    LocalTimeExpressionFunction() {
+    LocalTimeExpressionFunction(final String name) {
         super();
+        this.name = FunctionExpressionName.with(name);
     }
+
+    @Override
+    public final FunctionExpressionName name() {
+        return this.name;
+    }
+
+    private final FunctionExpressionName name;
 
     @Override
     public final boolean lsLastParameterVariable() {
