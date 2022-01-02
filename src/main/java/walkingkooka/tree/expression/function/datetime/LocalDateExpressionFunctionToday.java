@@ -18,7 +18,6 @@
 package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
@@ -37,15 +36,8 @@ final class LocalDateExpressionFunctionToday<C extends ExpressionFunctionContext
     private final static LocalDateExpressionFunctionToday<?> INSTANCE = new LocalDateExpressionFunctionToday<>();
 
     private LocalDateExpressionFunctionToday() {
-        super();
+        super("today");
     }
-
-    @Override
-    public FunctionExpressionName name() {
-        return NAME;
-    }
-
-    private final static FunctionExpressionName NAME = FunctionExpressionName.with("today");
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters() {
