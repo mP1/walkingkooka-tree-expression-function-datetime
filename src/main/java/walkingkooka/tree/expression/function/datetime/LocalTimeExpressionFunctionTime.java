@@ -19,7 +19,6 @@ package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.Cast;
 import walkingkooka.tree.expression.ExpressionNumber;
-import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
@@ -51,15 +50,8 @@ final class LocalTimeExpressionFunctionTime<C extends ExpressionFunctionContext>
     private final static LocalTimeExpressionFunctionTime<?> INSTANCE = new LocalTimeExpressionFunctionTime<>();
 
     private LocalTimeExpressionFunctionTime() {
-        super();
+        super("time");
     }
-
-    @Override
-    public FunctionExpressionName name() {
-        return NAME;
-    }
-
-    private final static FunctionExpressionName NAME = FunctionExpressionName.with("time");
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters() {
