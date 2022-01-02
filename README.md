@@ -18,6 +18,7 @@ Many more functions are outstanding and remain TODO.
 
 - date(year, month, day)
 - day(date)
+- days(date1, date2)
 - hour(time)
 - isoweeknum(date)
 - minute(time)
