@@ -49,6 +49,11 @@ abstract class LocalDateTimeExpressionFunction<C extends ExpressionFunctionConte
     }
 
     @Override
+    public final boolean requiresEvaluatedParameters() {
+        return true;
+    }
+
+    @Override
     public final boolean resolveReferences() {
         return true;
     }
