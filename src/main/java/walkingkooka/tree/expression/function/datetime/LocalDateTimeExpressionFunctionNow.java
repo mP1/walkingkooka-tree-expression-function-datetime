@@ -49,7 +49,7 @@ final class LocalDateTimeExpressionFunctionNow<C extends ExpressionFunctionConte
     @Override
     public LocalDateTime apply(final List<Object> parameters,
                                final C context) {
-        this.checkOnlyRequiredParameters(parameters);
+        this.checkParameterCount(parameters);
 
         return LocalDateTime.now();
     }

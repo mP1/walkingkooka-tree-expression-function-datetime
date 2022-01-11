@@ -42,7 +42,7 @@ final class LocalDateExpressionFunctionDateMonthAdd<C extends ExpressionFunction
     @Override
     public LocalDate apply(final List<Object> parameters,
                            final C context) {
-        this.checkOnlyRequiredParameters(parameters);
+        this.checkParameterCount(parameters);
 
         final LocalDate date = DATE.getOrFail(parameters, 0);
         final long months = MONTHS.getOrFail(parameters, 1)
@@ -59,7 +59,7 @@ final class LocalDateExpressionFunctionDateMonthAdd<C extends ExpressionFunction
     private final static ExpressionFunctionParameter<LocalDate> DATE = ExpressionFunctionParameter.DATE;
 
     private final static ExpressionFunctionParameter<ExpressionNumber> MONTHS = ExpressionFunctionParameterName.with("months")
-            .setType(ExpressionNumber.class);
+            .required(ExpressionNumber.class);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             DATE,

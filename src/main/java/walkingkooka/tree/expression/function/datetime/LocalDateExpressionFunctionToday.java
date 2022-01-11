@@ -49,7 +49,7 @@ final class LocalDateExpressionFunctionToday<C extends ExpressionFunctionContext
     @Override
     public LocalDate apply(final List<Object> parameters,
                            final C context) {
-        this.checkOnlyRequiredParameters(parameters);
+        this.checkParameterCount(parameters);
 
         return LocalDate.now();
     }

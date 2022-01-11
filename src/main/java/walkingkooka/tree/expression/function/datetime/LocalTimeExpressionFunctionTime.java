@@ -59,13 +59,13 @@ final class LocalTimeExpressionFunctionTime<C extends ExpressionFunctionContext>
     }
 
     private final static ExpressionFunctionParameter<ExpressionNumber> HOUR = ExpressionFunctionParameterName.with("hour")
-            .setType(ExpressionNumber.class);
+            .required(ExpressionNumber.class);
 
     private final static ExpressionFunctionParameter<ExpressionNumber> MINUTE = ExpressionFunctionParameterName.with("minute")
-            .setType(ExpressionNumber.class);
+            .required(ExpressionNumber.class);
 
     private final static ExpressionFunctionParameter<ExpressionNumber> SECOND = ExpressionFunctionParameterName.with("second")
-            .setType(ExpressionNumber.class);
+            .required(ExpressionNumber.class);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             HOUR,
@@ -76,7 +76,7 @@ final class LocalTimeExpressionFunctionTime<C extends ExpressionFunctionContext>
     @Override
     public LocalTime apply(final List<Object> parameters,
                            final C context) {
-        this.checkOnlyRequiredParameters(parameters);
+        this.checkParameterCount(parameters);
 
         final int hour = component(HOUR, parameters, 0);
         final int minute = component(MINUTE, parameters, 1);

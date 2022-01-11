@@ -55,13 +55,13 @@ final class LocalDateExpressionFunctionDate<C extends ExpressionFunctionContext>
     }
 
     private final static ExpressionFunctionParameter<ExpressionNumber> YEAR = ExpressionFunctionParameterName.with("year")
-            .setType(ExpressionNumber.class);
+            .required(ExpressionNumber.class);
 
     private final static ExpressionFunctionParameter<ExpressionNumber> MONTH = ExpressionFunctionParameterName.with("month")
-            .setType(ExpressionNumber.class);
+            .required(ExpressionNumber.class);
 
     private final static ExpressionFunctionParameter<ExpressionNumber> DAY = ExpressionFunctionParameterName.with("day")
-            .setType(ExpressionNumber.class);
+            .required(ExpressionNumber.class);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             YEAR,
@@ -72,7 +72,7 @@ final class LocalDateExpressionFunctionDate<C extends ExpressionFunctionContext>
     @Override
     public LocalDate apply(final List<Object> parameters,
                            final C context) {
-        this.checkOnlyRequiredParameters(parameters);
+        this.checkParameterCount(parameters);
 
         int year = component(YEAR, parameters, 0);
         if (year <= 99) {

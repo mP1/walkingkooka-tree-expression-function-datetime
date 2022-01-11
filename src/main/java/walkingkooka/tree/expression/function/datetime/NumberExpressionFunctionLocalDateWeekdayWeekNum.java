@@ -239,7 +239,7 @@ final class NumberExpressionFunctionLocalDateWeekdayWeekNum<C extends Expression
     }
 
     final static ExpressionFunctionParameter<ExpressionNumber> TYPE = ExpressionFunctionParameterName.with("type")
-            .setType(ExpressionNumber.class);
+            .optional(ExpressionNumber.class);
 
     private final BiFunction<LocalDate, Integer, Integer> mapper;
 
