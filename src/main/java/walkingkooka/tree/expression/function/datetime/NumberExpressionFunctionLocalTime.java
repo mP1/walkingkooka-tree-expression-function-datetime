@@ -98,7 +98,7 @@ final class NumberExpressionFunctionLocalTime<C extends ExpressionFunctionContex
     @Override
     public ExpressionNumber apply(final List<Object> parameters,
                                   final C context) {
-        this.checkOnlyRequiredParameters(parameters);
+        this.checkParameterCount(parameters);
 
         return context.expressionNumberKind()
                 .create(

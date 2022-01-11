@@ -43,7 +43,7 @@ final class NumberExpressionFunctionDays<C extends ExpressionFunctionContext> ex
     @Override
     public ExpressionNumber apply(final List<Object> parameters,
                                   final C context) {
-        this.checkOnlyRequiredParameters(parameters);
+        this.checkParameterCount(parameters);
 
         final LocalDate date1 = DATE1.getOrFail(parameters, 0);
         final LocalDate date2 = DATE2.getOrFail(parameters, 1);
@@ -60,10 +60,10 @@ final class NumberExpressionFunctionDays<C extends ExpressionFunctionContext> ex
     }
 
     private final static ExpressionFunctionParameter<LocalDate> DATE1 = ExpressionFunctionParameterName.with("date1")
-            .setType(LocalDate.class);
+            .required(LocalDate.class);
 
     private final static ExpressionFunctionParameter<LocalDate> DATE2 = ExpressionFunctionParameterName.with("date2")
-            .setType(LocalDate.class);
+            .required(LocalDate.class);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             DATE1,

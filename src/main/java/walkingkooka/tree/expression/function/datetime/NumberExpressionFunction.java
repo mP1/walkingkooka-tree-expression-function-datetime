@@ -38,11 +38,6 @@ abstract class NumberExpressionFunction<C extends ExpressionFunctionContext> imp
     private final FunctionExpressionName name;
 
     @Override
-    public final boolean lsLastParameterVariable() {
-        return this instanceof NumberExpressionFunctionLocalDateWeekdayWeekNum;
-    }
-
-    @Override
     public final Class<ExpressionNumber> returnType() {
         return ExpressionNumber.class;
     }

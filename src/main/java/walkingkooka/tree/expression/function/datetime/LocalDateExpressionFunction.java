@@ -39,11 +39,6 @@ abstract class LocalDateExpressionFunction<C extends ExpressionFunctionContext> 
     private final FunctionExpressionName name;
 
     @Override
-    public final boolean lsLastParameterVariable() {
-        return false;
-    }
-
-    @Override
     public final Class<LocalDate> returnType() {
         return LocalDate.class;
     }
