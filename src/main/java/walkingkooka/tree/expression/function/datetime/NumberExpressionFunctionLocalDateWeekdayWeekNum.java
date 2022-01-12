@@ -19,6 +19,7 @@ package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.Cast;
 import walkingkooka.tree.expression.ExpressionNumber;
+import walkingkooka.tree.expression.ExpressionNumberKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
@@ -211,29 +212,15 @@ final class NumberExpressionFunctionLocalDateWeekdayWeekNum<C extends Expression
     @Override
     public ExpressionNumber apply(final List<Object> parameters,
                                   final C context) {
-        final int count = parameters.size();
-
-        final LocalDate date;
-        final int type;
-
-        switch (count) {
-            case 1:
-                date = DATE.getOrFail(parameters, 0);
-                type = 1;
-                break;
-            case 2:
-                date = DATE.getOrFail(parameters, 0);
-                type = TYPE.getOrFail(parameters, 1).intValue();
-                break;
-            default:
-                throw new IllegalArgumentException("Expected 1 or 2 parameters got " + count);
-        }
+        this.checkParameterCount(parameters);
 
         return context.expressionNumberKind()
                 .create(
                         this.mapper.apply(
-                                date,
-                                type
+                                DATE.getOrFail(parameters, 0),
+                                TYPE.get(parameters, 1)
+                                        .orElse(ONE)
+                                        .intValue()
                         )
                 );
     }
@@ -252,4 +239,6 @@ final class NumberExpressionFunctionLocalDateWeekdayWeekNum<C extends Expression
             DATE,
             TYPE
     );
+
+    private final static ExpressionNumber ONE = ExpressionNumberKind.DEFAULT.create(1);
 }
