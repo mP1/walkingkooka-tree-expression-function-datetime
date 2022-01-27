@@ -34,7 +34,7 @@ public final class LocalDateExpressionFunctionDateMonthAddTest extends LocalDate
         this.applyAndCheck2(
                 Lists.of(
                         date,
-                        KIND.create(0)
+                        KIND.zero()
                 ),
                 date
         );
@@ -45,7 +45,7 @@ public final class LocalDateExpressionFunctionDateMonthAddTest extends LocalDate
         this.applyAndCheck2(
                 Lists.of(
                         LocalDate.of(2018, 2, 1),
-                        KIND.create(1)
+                        KIND.one()
                 ),
                 LocalDate.of(2018, 3, 1)
         );
