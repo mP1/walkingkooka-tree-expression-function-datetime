@@ -240,5 +240,5 @@ final class NumberExpressionFunctionLocalDateWeekdayWeekNum<C extends Expression
             TYPE
     );
 
-    private final static ExpressionNumber ONE = ExpressionNumberKind.DEFAULT.create(1);
+    private final static ExpressionNumber ONE = ExpressionNumberKind.DEFAULT.one();
 }

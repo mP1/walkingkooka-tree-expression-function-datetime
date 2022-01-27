@@ -126,7 +126,7 @@ public final class LocalDateExpressionFunctionDateTest extends LocalDateExpressi
         this.applyAndCheck2(
                 Lists.of(
                         KIND.create(2021),
-                        KIND.create(0),
+                        KIND.zero(),
                         KIND.create(2)
                 ),
                 LocalDate.of(2020, 12, 2)
