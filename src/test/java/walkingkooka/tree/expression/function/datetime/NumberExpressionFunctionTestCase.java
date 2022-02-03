@@ -18,10 +18,14 @@
 
 package walkingkooka.tree.expression.function.datetime;
 
+import walkingkooka.Cast;
+import walkingkooka.Either;
 import walkingkooka.tree.expression.ExpressionNumber;
 import walkingkooka.tree.expression.ExpressionNumberKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.FakeExpressionFunctionContext;
+
+import java.time.LocalDate;
 
 public abstract class NumberExpressionFunctionTestCase<F extends NumberExpressionFunction<ExpressionFunctionContext>> extends ExpressionFunctionTestCase<F, ExpressionNumber> {
 
@@ -37,6 +41,20 @@ public abstract class NumberExpressionFunctionTestCase<F extends NumberExpressio
             @Override
             public ExpressionNumberKind expressionNumberKind() {
                 return KIND;
+            }
+
+            @Override
+            public <T> Either<T, String> convert(final Object value,
+                                                 final Class<T> target) {
+                if(value instanceof LocalDate) {
+                    final LocalDate localDate = (LocalDate) value;
+                    return Cast.to(
+                        Either.left(
+                            KIND.create(localDate.getYear())
+                        )
+                    );
+                }
+                return this.failConversion(value, target);
             }
         };
     }
