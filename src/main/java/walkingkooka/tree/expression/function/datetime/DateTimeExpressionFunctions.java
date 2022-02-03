@@ -51,6 +51,7 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
                 now(),
                 second(),
                 time(),
+                timeValue(),
                 today(),
                 weekday(),
                 weekNum(),
@@ -147,6 +148,13 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
      */
     public static <C extends ExpressionFunctionContext> ExpressionFunction<LocalTime, C> time() {
         return LocalTimeExpressionFunctionTime.instance();
+    }
+
+    /**
+     * {@see LocalTimeExpressionFunctionTimeValue}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> timeValue() {
+        return NumberExpressionFunctionTimeValue.instance();
     }
 
     /**
