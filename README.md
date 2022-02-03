@@ -21,6 +21,7 @@ Many more functions are outstanding and remain TODO.
 - day(date)
 - days(date1, date2)
 - hour(time)
+- isDate(object)
 - isoweeknum(date)
 - minute(time)
 - month(date)
