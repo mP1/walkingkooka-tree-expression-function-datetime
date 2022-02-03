@@ -29,6 +29,7 @@ Many more functions are outstanding and remain TODO.
 - now()
 - second(time)
 - time(hour, minute, second)
+- timeValue(time)
 - today()
 - weekday(date)
 - weeknum(date, type)

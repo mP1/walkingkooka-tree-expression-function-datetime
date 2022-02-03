@@ -26,10 +26,15 @@ import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.FakeExpressionFunctionContext;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 public abstract class NumberExpressionFunctionTestCase<F extends NumberExpressionFunction<ExpressionFunctionContext>> extends ExpressionFunctionTestCase<F, ExpressionNumber> {
 
     final static ExpressionNumberKind KIND = ExpressionNumberKind.DEFAULT;
+
+    final LocalTime TIME = LocalTime.of(12, 58);
+
+    final ExpressionNumber TIME_VALUE = KIND.create(0.123);
 
     NumberExpressionFunctionTestCase() {
         super();
@@ -52,6 +57,14 @@ public abstract class NumberExpressionFunctionTestCase<F extends NumberExpressio
                         Either.left(
                             KIND.create(localDate.getYear())
                         )
+                    );
+                }
+                if(value instanceof LocalTime) {
+                    checkEquals(TIME, value);
+                    return Cast.to(
+                            Either.left(
+                                    TIME_VALUE
+                            )
                     );
                 }
                 return this.failConversion(value, target);
