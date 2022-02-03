@@ -43,6 +43,7 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
                 day(),
                 days(),
                 hour(),
+                isDate(),
                 isoWeekNum(),
                 minute(),
                 month(),
@@ -89,6 +90,13 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
      */
     public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> hour() {
         return NumberExpressionFunctionLocalTime.hour();
+    }
+
+    /**
+     * {@see BooleanExpressionFunctionIsDate}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> isDate() {
+        return BooleanExpressionFunctionIsDate.instance();
     }
 
     /**
