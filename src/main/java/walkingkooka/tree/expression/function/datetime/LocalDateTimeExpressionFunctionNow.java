@@ -18,7 +18,7 @@
 package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
 import java.time.LocalDateTime;
@@ -27,9 +27,9 @@ import java.util.List;
 // https://exceljet.net/excel-functions/excel-now-function
 //
 // The value returned by the NOW function is a standard Excel date, including a fractional value for time.
-final class LocalDateTimeExpressionFunctionNow<C extends ExpressionFunctionContext> extends LocalDateTimeExpressionFunction<C> {
+final class LocalDateTimeExpressionFunctionNow<C extends ExpressionEvaluationContext> extends LocalDateTimeExpressionFunction<C> {
 
-    static <C extends ExpressionFunctionContext> LocalDateTimeExpressionFunctionNow<C> instance() {
+    static <C extends ExpressionEvaluationContext> LocalDateTimeExpressionFunctionNow<C> instance() {
         return Cast.to(INSTANCE);
     }
 

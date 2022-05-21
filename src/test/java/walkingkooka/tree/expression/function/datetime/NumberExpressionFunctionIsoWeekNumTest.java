@@ -20,12 +20,12 @@ package walkingkooka.tree.expression.function.datetime;
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 
 import java.time.LocalDate;
 
 // https://exceljet.net/excel-functions/excel-isoweeknum-function
-public final class NumberExpressionFunctionIsoWeekNumTest extends NumberExpressionFunctionTestCase<NumberExpressionFunctionIsoWeekNum<ExpressionFunctionContext>> {
+public final class NumberExpressionFunctionIsoWeekNumTest extends NumberExpressionFunctionTestCase<NumberExpressionFunctionIsoWeekNum<ExpressionEvaluationContext>> {
 
     @Test
     public void test20201225() {
@@ -125,12 +125,12 @@ public final class NumberExpressionFunctionIsoWeekNumTest extends NumberExpressi
     }
 
     @Override
-    public NumberExpressionFunctionIsoWeekNum<ExpressionFunctionContext> createBiFunction() {
+    public NumberExpressionFunctionIsoWeekNum<ExpressionEvaluationContext> createBiFunction() {
         return NumberExpressionFunctionIsoWeekNum.instance();
     }
 
     @Override
-    public Class<NumberExpressionFunctionIsoWeekNum<ExpressionFunctionContext>> type() {
+    public Class<NumberExpressionFunctionIsoWeekNum<ExpressionEvaluationContext>> type() {
         return Cast.to(NumberExpressionFunctionIsoWeekNum.class);
     }
 }

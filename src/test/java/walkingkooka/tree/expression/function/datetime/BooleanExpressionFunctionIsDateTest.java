@@ -21,15 +21,15 @@ import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.Either;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
-import walkingkooka.tree.expression.function.FakeExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
+import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-public final class BooleanExpressionFunctionIsDateTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunctionIsDate<ExpressionFunctionContext>> {
+public final class BooleanExpressionFunctionIsDateTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunctionIsDate<ExpressionEvaluationContext>> {
 
     @Test
     public void testNullParameterFalse() {
@@ -107,13 +107,13 @@ public final class BooleanExpressionFunctionIsDateTest extends BooleanExpression
     }
 
     @Override
-    public BooleanExpressionFunctionIsDate<ExpressionFunctionContext> createBiFunction() {
+    public BooleanExpressionFunctionIsDate<ExpressionEvaluationContext> createBiFunction() {
         return BooleanExpressionFunctionIsDate.instance();
     }
 
     @Override
-    public ExpressionFunctionContext createContext() {
-        return new FakeExpressionFunctionContext() {
+    public ExpressionEvaluationContext createContext() {
+        return new FakeExpressionEvaluationContext() {
             @Override
             public <T> Either<T, String> convert(final Object value,
                                                  final Class<T> target) {
@@ -149,7 +149,7 @@ public final class BooleanExpressionFunctionIsDateTest extends BooleanExpression
     }
 
     @Override
-    public Class<BooleanExpressionFunctionIsDate<ExpressionFunctionContext>> type() {
+    public Class<BooleanExpressionFunctionIsDate<ExpressionEvaluationContext>> type() {
         return Cast.to(BooleanExpressionFunctionIsDate.class);
     }
 }

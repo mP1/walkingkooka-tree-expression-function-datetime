@@ -20,13 +20,13 @@ package walkingkooka.tree.expression.function.datetime;
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.List;
 
-public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends NumberExpressionFunctionTestCase<NumberExpressionFunctionLocalDateWeekdayWeekNum<ExpressionFunctionContext>> {
+public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends NumberExpressionFunctionTestCase<NumberExpressionFunctionLocalDateWeekdayWeekNum<ExpressionEvaluationContext>> {
 
     private final static int SUNDAY = 1;
     private final static int MONDAY = 2;
@@ -742,12 +742,12 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Override
-    public NumberExpressionFunctionLocalDateWeekdayWeekNum<ExpressionFunctionContext> createBiFunction() {
+    public NumberExpressionFunctionLocalDateWeekdayWeekNum<ExpressionEvaluationContext> createBiFunction() {
         return NumberExpressionFunctionLocalDateWeekdayWeekNum.weekday();
     }
 
     @Override
-    public Class<NumberExpressionFunctionLocalDateWeekdayWeekNum<ExpressionFunctionContext>> type() {
+    public Class<NumberExpressionFunctionLocalDateWeekdayWeekNum<ExpressionEvaluationContext>> type() {
         return Cast.to(NumberExpressionFunctionLocalDateWeekdayWeekNum.class);
     }
 }

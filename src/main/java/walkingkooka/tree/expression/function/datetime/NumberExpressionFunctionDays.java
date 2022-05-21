@@ -18,8 +18,8 @@
 package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.Cast;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionNumber;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
@@ -28,9 +28,9 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 // https://exceljet.net/excel-functions/excel-days-function
-final class NumberExpressionFunctionDays<C extends ExpressionFunctionContext> extends NumberExpressionFunction<C> {
+final class NumberExpressionFunctionDays<C extends ExpressionEvaluationContext> extends NumberExpressionFunction<C> {
 
-    static <C extends ExpressionFunctionContext> NumberExpressionFunctionDays<C> instance() {
+    static <C extends ExpressionEvaluationContext> NumberExpressionFunctionDays<C> instance() {
         return Cast.to(INSTANCE);
     }
 

@@ -18,7 +18,7 @@
 package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
 import java.time.LocalDate;
@@ -31,12 +31,12 @@ import java.util.List;
  * if it isConvertable a {@link LocalDate}, {@link LocalDateTime} or {@link LocalTime}.
  */
 // https://support.google.com/docs/answer/9061381?hl=en&ref_topic=3105471
-final class BooleanExpressionFunctionIsDate<C extends ExpressionFunctionContext> extends BooleanExpressionFunction<C> {
+final class BooleanExpressionFunctionIsDate<C extends ExpressionEvaluationContext> extends BooleanExpressionFunction<C> {
 
     /**
      * Instance getter.
      */
-    static <C extends ExpressionFunctionContext> BooleanExpressionFunctionIsDate<C> instance() {
+    static <C extends ExpressionEvaluationContext> BooleanExpressionFunctionIsDate<C> instance() {
         return Cast.to(INSTANCE);
     }
 

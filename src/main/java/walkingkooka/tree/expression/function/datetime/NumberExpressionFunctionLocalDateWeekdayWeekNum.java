@@ -18,9 +18,9 @@
 package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.Cast;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionNumber;
 import walkingkooka.tree.expression.ExpressionNumberKind;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
@@ -34,7 +34,7 @@ import java.util.function.BiFunction;
 /**
  * Given a {@link LocalDate} extracts the weekday or weeknum
  */
-final class NumberExpressionFunctionLocalDateWeekdayWeekNum<C extends ExpressionFunctionContext> extends NumberExpressionFunctionLocalDate<C> {
+final class NumberExpressionFunctionLocalDateWeekdayWeekNum<C extends ExpressionEvaluationContext> extends NumberExpressionFunctionLocalDate<C> {
 
     /**
      * WEEKDAY Instance getter.
@@ -72,7 +72,7 @@ final class NumberExpressionFunctionLocalDateWeekdayWeekNum<C extends Expression
      * Numbers 1 (Sunday) through 7 (Saturday).
      * </pre>
      */
-    static <C extends ExpressionFunctionContext> NumberExpressionFunctionLocalDateWeekdayWeekNum<C> weekday() {
+    static <C extends ExpressionEvaluationContext> NumberExpressionFunctionLocalDateWeekdayWeekNum<C> weekday() {
         return Cast.to(WEEKDAY);
     }
 
@@ -83,7 +83,7 @@ final class NumberExpressionFunctionLocalDateWeekdayWeekNum<C extends Expression
      * The Excel WEEKNUM function extracts the weeknum from a given date as number between 1 to 12.
      * </pre>
      */
-    static <C extends ExpressionFunctionContext> NumberExpressionFunctionLocalDateWeekdayWeekNum<C> weeknum() {
+    static <C extends ExpressionEvaluationContext> NumberExpressionFunctionLocalDateWeekdayWeekNum<C> weeknum() {
         return Cast.to(WEEKNUM);
     }
 

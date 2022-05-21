@@ -20,12 +20,12 @@ package walkingkooka.tree.expression.function.datetime;
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 
 import java.time.LocalDate;
 
 // https://exceljet.net/excel-functions/excel-edate-function
-public final class LocalDateExpressionFunctionDateMonthAddTest extends LocalDateExpressionFunctionTestCase<LocalDateExpressionFunctionDateMonthAdd<ExpressionFunctionContext>> {
+public final class LocalDateExpressionFunctionDateMonthAddTest extends LocalDateExpressionFunctionTestCase<LocalDateExpressionFunctionDateMonthAdd<ExpressionEvaluationContext>> {
 
     @Test
     public void testZero() {
@@ -90,12 +90,12 @@ public final class LocalDateExpressionFunctionDateMonthAddTest extends LocalDate
     }
 
     @Override
-    public LocalDateExpressionFunctionDateMonthAdd<ExpressionFunctionContext> createBiFunction() {
+    public LocalDateExpressionFunctionDateMonthAdd<ExpressionEvaluationContext> createBiFunction() {
         return LocalDateExpressionFunctionDateMonthAdd.instance();
     }
 
     @Override
-    public Class<LocalDateExpressionFunctionDateMonthAdd<ExpressionFunctionContext>> type() {
+    public Class<LocalDateExpressionFunctionDateMonthAdd<ExpressionEvaluationContext>> type() {
         return Cast.to(LocalDateExpressionFunctionDateMonthAdd.class);
     }
 }

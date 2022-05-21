@@ -20,12 +20,12 @@ package walkingkooka.tree.expression.function.datetime;
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 
 import java.time.LocalDate;
 
 // https://exceljet.net/excel-functions/excel-datevalue-function
-public final class NumberExpressionFunctionDateValueTest extends NumberExpressionFunctionTestCase<NumberExpressionFunctionDateValue<ExpressionFunctionContext>> {
+public final class NumberExpressionFunctionDateValueTest extends NumberExpressionFunctionTestCase<NumberExpressionFunctionDateValue<ExpressionEvaluationContext>> {
 
     @Test
     public void test() {
@@ -46,12 +46,12 @@ public final class NumberExpressionFunctionDateValueTest extends NumberExpressio
     }
 
     @Override
-    public NumberExpressionFunctionDateValue<ExpressionFunctionContext> createBiFunction() {
+    public NumberExpressionFunctionDateValue<ExpressionEvaluationContext> createBiFunction() {
         return NumberExpressionFunctionDateValue.instance();
     }
 
     @Override
-    public Class<NumberExpressionFunctionDateValue<ExpressionFunctionContext>> type() {
+    public Class<NumberExpressionFunctionDateValue<ExpressionEvaluationContext>> type() {
         return Cast.to(NumberExpressionFunctionDateValue.class);
     }
 }

@@ -18,7 +18,7 @@
 package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
 import java.time.LocalDate;
@@ -27,9 +27,9 @@ import java.util.List;
 // https://exceljet.net/excel-functions/excel-today-function
 //
 // The Excel TODAY function returns the current date,
-final class LocalDateExpressionFunctionToday<C extends ExpressionFunctionContext> extends LocalDateExpressionFunction<C> {
+final class LocalDateExpressionFunctionToday<C extends ExpressionEvaluationContext> extends LocalDateExpressionFunction<C> {
 
-    static <C extends ExpressionFunctionContext> LocalDateExpressionFunctionToday<C> instance() {
+    static <C extends ExpressionEvaluationContext> LocalDateExpressionFunctionToday<C> instance() {
         return Cast.to(INSTANCE);
     }
 

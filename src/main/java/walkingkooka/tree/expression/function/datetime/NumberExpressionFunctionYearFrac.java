@@ -18,8 +18,8 @@
 package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.Cast;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionNumber;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
@@ -32,9 +32,9 @@ import java.util.List;
  * @param <C>
  */
 // https://exceljet.net/excel-functions/excel-datevalue-function
-final class NumberExpressionFunctionYearFrac<C extends ExpressionFunctionContext> extends NumberExpressionFunction<C> {
+final class NumberExpressionFunctionYearFrac<C extends ExpressionEvaluationContext> extends NumberExpressionFunction<C> {
 
-    static <C extends ExpressionFunctionContext> NumberExpressionFunctionYearFrac<C> instance() {
+    static <C extends ExpressionEvaluationContext> NumberExpressionFunctionYearFrac<C> instance() {
         return Cast.to(INSTANCE);
     }
 

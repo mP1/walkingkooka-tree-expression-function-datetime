@@ -18,13 +18,13 @@
 
 package walkingkooka.tree.expression.function.datetime;
 
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionNumberKind;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
-import walkingkooka.tree.expression.function.FakeExpressionFunctionContext;
+import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 
 import java.time.LocalDate;
 
-public abstract class LocalDateExpressionFunctionTestCase<F extends LocalDateExpressionFunction<ExpressionFunctionContext>> extends ExpressionFunctionTestCase<F, LocalDate> {
+public abstract class LocalDateExpressionFunctionTestCase<F extends LocalDateExpressionFunction<ExpressionEvaluationContext>> extends ExpressionFunctionTestCase<F, LocalDate> {
 
     final static ExpressionNumberKind KIND = ExpressionNumberKind.DEFAULT;
 
@@ -35,8 +35,8 @@ public abstract class LocalDateExpressionFunctionTestCase<F extends LocalDateExp
     }
 
     @Override
-    public final ExpressionFunctionContext createContext() {
-        return new FakeExpressionFunctionContext(){
+    public final ExpressionEvaluationContext createContext() {
+        return new FakeExpressionEvaluationContext(){
             @Override
             public ExpressionNumberKind expressionNumberKind() {
                 return KIND;

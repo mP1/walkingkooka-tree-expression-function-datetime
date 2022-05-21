@@ -20,13 +20,13 @@ package walkingkooka.tree.expression.function.datetime;
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 // https://exceljet.net/excel-functions/excel-days-function
-public final class NumberExpressionFunctionDaysTest extends NumberExpressionFunctionTestCase<NumberExpressionFunctionDays<ExpressionFunctionContext>> {
+public final class NumberExpressionFunctionDaysTest extends NumberExpressionFunctionTestCase<NumberExpressionFunctionDays<ExpressionEvaluationContext>> {
 
     private final static LocalTime TIME = LocalTime.of(0, 58, 59);
 
@@ -84,12 +84,12 @@ public final class NumberExpressionFunctionDaysTest extends NumberExpressionFunc
     }
 
     @Override
-    public NumberExpressionFunctionDays<ExpressionFunctionContext> createBiFunction() {
+    public NumberExpressionFunctionDays<ExpressionEvaluationContext> createBiFunction() {
         return NumberExpressionFunctionDays.instance();
     }
 
     @Override
-    public Class<NumberExpressionFunctionDays<ExpressionFunctionContext>> type() {
+    public Class<NumberExpressionFunctionDays<ExpressionEvaluationContext>> type() {
         return Cast.to(NumberExpressionFunctionDays.class);
     }
 }

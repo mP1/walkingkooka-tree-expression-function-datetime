@@ -19,9 +19,9 @@ package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.collect.list.Lists;
 import walkingkooka.reflect.PublicStaticHelper;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionNumber;
 import walkingkooka.tree.expression.function.ExpressionFunction;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -62,126 +62,126 @@ public final class DateTimeExpressionFunctions implements PublicStaticHelper {
     /**
      * {@see LocalDateExpressionFunctionDate}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<LocalDate, C> date() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<LocalDate, C> date() {
         return LocalDateExpressionFunctionDate.instance();
     }
 
     /**
      * {@see LocalDateExpressionFunctionDateMonthAdd}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<LocalDate, C> dateMonthAdd() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<LocalDate, C> dateMonthAdd() {
         return LocalDateExpressionFunctionDateMonthAdd.instance();
     }
 
     /**
      * {@see NumberExpressionFunctionDateValue}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> dateValue() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<ExpressionNumber, C> dateValue() {
         return NumberExpressionFunctionDateValue.instance();
     }
 
     /**
      * {@see NumberExpressionFunctionLocalDateComponent#day}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> day() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<ExpressionNumber, C> day() {
         return NumberExpressionFunctionLocalDateComponent.day();
     }
 
     /**
      * {@see NumberExpressionFunctionDays}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> days() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<ExpressionNumber, C> days() {
         return NumberExpressionFunctionDays.instance();
     }
 
     /**
      * {@see NumberExpressionFunctionLocalTime#hour}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> hour() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<ExpressionNumber, C> hour() {
         return NumberExpressionFunctionLocalTime.hour();
     }
 
     /**
      * {@see BooleanExpressionFunctionIsDate}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> isDate() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Boolean, C> isDate() {
         return BooleanExpressionFunctionIsDate.instance();
     }
 
     /**
      * {@see NumberExpressionFunctionIsoWeekNum}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> isoWeekNum() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<ExpressionNumber, C> isoWeekNum() {
         return NumberExpressionFunctionIsoWeekNum.instance();
     }
 
     /**
      * {@see NumberExpressionFunctionLocalTime#minute}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> minute() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<ExpressionNumber, C> minute() {
         return NumberExpressionFunctionLocalTime.minute();
     }
 
     /**
      * {@see NumberExpressionFunctionLocalDateComponent#month}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> month() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<ExpressionNumber, C> month() {
         return NumberExpressionFunctionLocalDateComponent.month();
     }
 
     /**
      * {@see LocalDateTimeExpressionFunctionNow}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<LocalDateTime, C> now() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<LocalDateTime, C> now() {
         return LocalDateTimeExpressionFunctionNow.instance();
     }
 
     /**
      * {@see NumberExpressionFunctionLocalTime#second}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> second() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<ExpressionNumber, C> second() {
         return NumberExpressionFunctionLocalTime.second();
     }
 
     /**
      * {@see LocalTimeExpressionFunctionTime}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<LocalTime, C> time() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<LocalTime, C> time() {
         return LocalTimeExpressionFunctionTime.instance();
     }
 
     /**
      * {@see LocalTimeExpressionFunctionTimeValue}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> timeValue() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<ExpressionNumber, C> timeValue() {
         return NumberExpressionFunctionTimeValue.instance();
     }
 
     /**
      * {@see LocalDateExpressionFunctionToday}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<LocalDate, C> today() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<LocalDate, C> today() {
         return LocalDateExpressionFunctionToday.instance();
     }
 
     /**
      * {@see NumberExpressionFunctionLocalDateWeekdayWeekNum#weekday}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> weekday() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<ExpressionNumber, C> weekday() {
         return NumberExpressionFunctionLocalDateWeekdayWeekNum.weekday();
     }
 
     /**
      * {@see NumberExpressionFunctionLocalDateWeekdayWeekNum#weeknum}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> weekNum() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<ExpressionNumber, C> weekNum() {
         return NumberExpressionFunctionLocalDateWeekdayWeekNum.weeknum();
     }
 
     /**
      * {@see NumberExpressionFunctionLocalDateComponent#year}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<ExpressionNumber, C> year() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<ExpressionNumber, C> year() {
         return NumberExpressionFunctionLocalDateComponent.year();
     }
 

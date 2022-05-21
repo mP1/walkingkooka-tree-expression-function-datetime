@@ -18,8 +18,8 @@
 package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.Cast;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionNumber;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
 import java.time.LocalDate;
@@ -29,12 +29,12 @@ import java.util.function.Function;
 /**
  * Given a {@link LocalDate} extracts a component.
  */
-final class NumberExpressionFunctionLocalDateComponent<C extends ExpressionFunctionContext> extends NumberExpressionFunctionLocalDate<C> {
+final class NumberExpressionFunctionLocalDateComponent<C extends ExpressionEvaluationContext> extends NumberExpressionFunctionLocalDate<C> {
 
     /**
      * DAY Instance getter.
      */
-    static <C extends ExpressionFunctionContext> NumberExpressionFunctionLocalDateComponent<C> day() {
+    static <C extends ExpressionEvaluationContext> NumberExpressionFunctionLocalDateComponent<C> day() {
         return Cast.to(DAY);
     }
 
@@ -45,14 +45,14 @@ final class NumberExpressionFunctionLocalDateComponent<C extends ExpressionFunct
      * The Excel MONTH function extracts the month from a given date as number between 1 to 12.
      * </pre>
      */
-    static <C extends ExpressionFunctionContext> NumberExpressionFunctionLocalDateComponent<C> month() {
+    static <C extends ExpressionEvaluationContext> NumberExpressionFunctionLocalDateComponent<C> month() {
         return Cast.to(MONTH);
     }
 
     /**
      * YEAR Instance getter.
      */
-    static <C extends ExpressionFunctionContext> NumberExpressionFunctionLocalDateComponent<C> year() {
+    static <C extends ExpressionEvaluationContext> NumberExpressionFunctionLocalDateComponent<C> year() {
         return Cast.to(YEAR);
     }
 

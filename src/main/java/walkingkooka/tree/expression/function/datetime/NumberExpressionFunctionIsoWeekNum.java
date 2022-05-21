@@ -18,17 +18,17 @@
 package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.Cast;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionNumber;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
 import java.time.temporal.IsoFields;
 import java.util.List;
 
 // https://exceljet.net/excel-functions/excel-isoweeknum-function
-final class NumberExpressionFunctionIsoWeekNum<C extends ExpressionFunctionContext> extends NumberExpressionFunction<C> {
+final class NumberExpressionFunctionIsoWeekNum<C extends ExpressionEvaluationContext> extends NumberExpressionFunction<C> {
 
-    static <C extends ExpressionFunctionContext> NumberExpressionFunctionIsoWeekNum<C> instance() {
+    static <C extends ExpressionEvaluationContext> NumberExpressionFunctionIsoWeekNum<C> instance() {
         return Cast.to(INSTANCE);
     }
 

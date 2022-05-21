@@ -20,13 +20,13 @@ package walkingkooka.tree.expression.function.datetime;
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public final class LocalDateExpressionFunctionDateTest extends LocalDateExpressionFunctionTestCase<LocalDateExpressionFunctionDate<ExpressionFunctionContext>>  {
+public final class LocalDateExpressionFunctionDateTest extends LocalDateExpressionFunctionTestCase<LocalDateExpressionFunctionDate<ExpressionEvaluationContext>>  {
 
     @Test
     public void testInvalidYearFails() {
@@ -139,12 +139,12 @@ public final class LocalDateExpressionFunctionDateTest extends LocalDateExpressi
     }
 
     @Override
-    public LocalDateExpressionFunctionDate<ExpressionFunctionContext> createBiFunction() {
+    public LocalDateExpressionFunctionDate<ExpressionEvaluationContext> createBiFunction() {
         return LocalDateExpressionFunctionDate.instance();
     }
 
     @Override
-    public Class<LocalDateExpressionFunctionDate<ExpressionFunctionContext>> type() {
+    public Class<LocalDateExpressionFunctionDate<ExpressionEvaluationContext>> type() {
         return Cast.to(LocalDateExpressionFunctionDate.class);
     }
 }
