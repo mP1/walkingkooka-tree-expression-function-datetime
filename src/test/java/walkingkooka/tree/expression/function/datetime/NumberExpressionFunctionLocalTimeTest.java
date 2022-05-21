@@ -20,11 +20,11 @@ package walkingkooka.tree.expression.function.datetime;
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 
 import java.time.LocalTime;
 
-public final class NumberExpressionFunctionLocalTimeTest extends NumberExpressionFunctionTestCase<NumberExpressionFunctionLocalTime<ExpressionFunctionContext>> {
+public final class NumberExpressionFunctionLocalTimeTest extends NumberExpressionFunctionTestCase<NumberExpressionFunctionLocalTime<ExpressionEvaluationContext>> {
 
     private final static LocalTime TIME = LocalTime.of(0, 58, 59);
 
@@ -72,7 +72,7 @@ public final class NumberExpressionFunctionLocalTimeTest extends NumberExpressio
         );
     }
 
-    private void applyAndCheck3(final NumberExpressionFunctionLocalTime<ExpressionFunctionContext> function, final int expected) {
+    private void applyAndCheck3(final NumberExpressionFunctionLocalTime<ExpressionEvaluationContext> function, final int expected) {
         this.applyAndCheck3(
                 function,
                 TIME,
@@ -80,7 +80,7 @@ public final class NumberExpressionFunctionLocalTimeTest extends NumberExpressio
         );
     }
 
-    private void applyAndCheck3(final NumberExpressionFunctionLocalTime<ExpressionFunctionContext> function,
+    private void applyAndCheck3(final NumberExpressionFunctionLocalTime<ExpressionEvaluationContext> function,
                                 final LocalTime time,
                                 final int expected) {
         this.applyAndCheck2(
@@ -115,12 +115,12 @@ public final class NumberExpressionFunctionLocalTimeTest extends NumberExpressio
     }
 
     @Override
-    public NumberExpressionFunctionLocalTime<ExpressionFunctionContext> createBiFunction() {
+    public NumberExpressionFunctionLocalTime<ExpressionEvaluationContext> createBiFunction() {
         return NumberExpressionFunctionLocalTime.hour();
     }
 
     @Override
-    public Class<NumberExpressionFunctionLocalTime<ExpressionFunctionContext>> type() {
+    public Class<NumberExpressionFunctionLocalTime<ExpressionEvaluationContext>> type() {
         return Cast.to(NumberExpressionFunctionLocalTime.class);
     }
 }

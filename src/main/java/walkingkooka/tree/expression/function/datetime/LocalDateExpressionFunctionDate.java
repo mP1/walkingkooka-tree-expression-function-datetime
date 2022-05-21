@@ -18,8 +18,8 @@
 package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.Cast;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionNumber;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
@@ -37,9 +37,9 @@ import java.util.List;
 //year - Number for year.
 //month - Number for month.
 //day - Number for day.
-final class LocalDateExpressionFunctionDate<C extends ExpressionFunctionContext> extends LocalDateExpressionFunction<C> {
+final class LocalDateExpressionFunctionDate<C extends ExpressionEvaluationContext> extends LocalDateExpressionFunction<C> {
 
-    static <C extends ExpressionFunctionContext> LocalDateExpressionFunctionDate<C> instance() {
+    static <C extends ExpressionEvaluationContext> LocalDateExpressionFunctionDate<C> instance() {
         return Cast.to(INSTANCE);
     }
 

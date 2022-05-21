@@ -18,8 +18,8 @@
 package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.Cast;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionNumber;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
 import java.time.LocalTime;
@@ -29,7 +29,7 @@ import java.util.function.Function;
 /**
  * Given a {@link LocalTime} extracts a component.
  */
-final class NumberExpressionFunctionLocalTime<C extends ExpressionFunctionContext> extends NumberExpressionFunction<C> {
+final class NumberExpressionFunctionLocalTime<C extends ExpressionEvaluationContext> extends NumberExpressionFunction<C> {
 
     /**
      * HOUR Instance getter.
@@ -40,7 +40,7 @@ final class NumberExpressionFunctionLocalTime<C extends ExpressionFunctionContex
      * or feed the result into another formula, like the TIME function.
      * </pre>
      */
-    static <C extends ExpressionFunctionContext> NumberExpressionFunctionLocalTime<C> hour() {
+    static <C extends ExpressionEvaluationContext> NumberExpressionFunctionLocalTime<C> hour() {
         return Cast.to(HOUR);
     }
 
@@ -51,14 +51,14 @@ final class NumberExpressionFunctionLocalTime<C extends ExpressionFunctionContex
      * The Excel MINUTE function extracts the minute from a given time as number between 1 to 12.
      * </pre>
      */
-    static <C extends ExpressionFunctionContext> NumberExpressionFunctionLocalTime<C> minute() {
+    static <C extends ExpressionEvaluationContext> NumberExpressionFunctionLocalTime<C> minute() {
         return Cast.to(MINUTE);
     }
 
     /**
      * SECOND Instance getter.
      */
-    static <C extends ExpressionFunctionContext> NumberExpressionFunctionLocalTime<C> second() {
+    static <C extends ExpressionEvaluationContext> NumberExpressionFunctionLocalTime<C> second() {
         return Cast.to(SECOND);
     }
 

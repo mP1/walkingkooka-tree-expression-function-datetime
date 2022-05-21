@@ -18,8 +18,8 @@
 package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.Cast;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionNumber;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
@@ -41,9 +41,9 @@ import java.util.List;
 //hour - The hour for the time you wish to create.
 //minute - The minute for the time you wish to create.
 //second - The second for the time you wish to create.
-final class LocalTimeExpressionFunctionTime<C extends ExpressionFunctionContext> extends LocalTimeExpressionFunction<C> {
+final class LocalTimeExpressionFunctionTime<C extends ExpressionEvaluationContext> extends LocalTimeExpressionFunction<C> {
 
-    static <C extends ExpressionFunctionContext> LocalTimeExpressionFunctionTime<C> instance() {
+    static <C extends ExpressionEvaluationContext> LocalTimeExpressionFunctionTime<C> instance() {
         return Cast.to(INSTANCE);
     }
 

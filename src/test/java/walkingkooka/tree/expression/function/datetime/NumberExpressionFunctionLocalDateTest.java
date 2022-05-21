@@ -20,12 +20,12 @@ package walkingkooka.tree.expression.function.datetime;
 import walkingkooka.Cast;
 import walkingkooka.reflect.ClassTesting;
 import walkingkooka.reflect.JavaVisibility;
-import walkingkooka.tree.expression.function.FakeExpressionFunctionContext;
+import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 
-public final class NumberExpressionFunctionLocalDateTest implements ClassTesting<NumberExpressionFunctionLocalDate<FakeExpressionFunctionContext>> {
+public final class NumberExpressionFunctionLocalDateTest implements ClassTesting<NumberExpressionFunctionLocalDate<FakeExpressionEvaluationContext>> {
 
     @Override
-    public Class<NumberExpressionFunctionLocalDate<FakeExpressionFunctionContext>> type() {
+    public Class<NumberExpressionFunctionLocalDate<FakeExpressionEvaluationContext>> type() {
         return Cast.to(NumberExpressionFunctionLocalDate.class);
     }
 

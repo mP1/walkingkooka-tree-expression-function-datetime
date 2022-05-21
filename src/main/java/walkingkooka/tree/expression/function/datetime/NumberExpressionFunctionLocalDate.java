@@ -17,7 +17,7 @@
 
 package walkingkooka.tree.expression.function.datetime;
 
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
 import java.time.LocalDate;
@@ -25,7 +25,7 @@ import java.time.LocalDate;
 /**
  * Base for any date function.
  */
-abstract class NumberExpressionFunctionLocalDate<C extends ExpressionFunctionContext> extends NumberExpressionFunction<C> {
+abstract class NumberExpressionFunctionLocalDate<C extends ExpressionEvaluationContext> extends NumberExpressionFunction<C> {
 
     /**
      * Package private ctor

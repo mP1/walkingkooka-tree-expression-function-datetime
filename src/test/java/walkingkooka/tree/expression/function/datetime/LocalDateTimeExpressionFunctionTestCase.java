@@ -18,20 +18,20 @@
 
 package walkingkooka.tree.expression.function.datetime;
 
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
-import walkingkooka.tree.expression.function.ExpressionFunctionContexts;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContexts;
 
 import java.time.LocalDateTime;
 
-public abstract class LocalDateTimeExpressionFunctionTestCase<F extends LocalDateTimeExpressionFunction<ExpressionFunctionContext>> extends ExpressionFunctionTestCase<F, LocalDateTime> {
+public abstract class LocalDateTimeExpressionFunctionTestCase<F extends LocalDateTimeExpressionFunction<ExpressionEvaluationContext>> extends ExpressionFunctionTestCase<F, LocalDateTime> {
 
     LocalDateTimeExpressionFunctionTestCase() {
         super();
     }
 
     @Override
-    public ExpressionFunctionContext createContext() {
-        return ExpressionFunctionContexts.fake();
+    public ExpressionEvaluationContext createContext() {
+        return ExpressionEvaluationContexts.fake();
     }
 
     @Override

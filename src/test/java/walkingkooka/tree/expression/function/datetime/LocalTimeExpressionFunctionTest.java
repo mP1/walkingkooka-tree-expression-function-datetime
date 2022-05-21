@@ -20,16 +20,16 @@ package walkingkooka.tree.expression.function.datetime;
 import walkingkooka.Cast;
 import walkingkooka.reflect.ClassTesting;
 import walkingkooka.reflect.JavaVisibility;
-import walkingkooka.tree.expression.function.FakeExpressionFunctionContext;
+import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 
-public final class LocalTimeExpressionFunctionTest implements ClassTesting<LocalTimeExpressionFunction<FakeExpressionFunctionContext>> {
+public final class LocalTimeExpressionFunctionTest implements ClassTesting<LocalTimeExpressionFunction<FakeExpressionEvaluationContext>> {
     @Override
     public JavaVisibility typeVisibility() {
         return JavaVisibility.PACKAGE_PRIVATE;
     }
 
     @Override
-    public Class<LocalTimeExpressionFunction<FakeExpressionFunctionContext>> type() {
+    public Class<LocalTimeExpressionFunction<FakeExpressionEvaluationContext>> type() {
         return Cast.to(LocalTimeExpressionFunction.class);
     }
 }

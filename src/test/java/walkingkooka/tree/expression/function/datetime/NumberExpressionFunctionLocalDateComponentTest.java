@@ -20,11 +20,11 @@ package walkingkooka.tree.expression.function.datetime;
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 
 import java.time.LocalDate;
 
-public final class NumberExpressionFunctionLocalDateComponentTest extends NumberExpressionFunctionTestCase<NumberExpressionFunctionLocalDateComponent<ExpressionFunctionContext>> {
+public final class NumberExpressionFunctionLocalDateComponentTest extends NumberExpressionFunctionTestCase<NumberExpressionFunctionLocalDateComponent<ExpressionEvaluationContext>> {
 
     private final static LocalDate DATE = LocalDate.of(1999, 12, 31);
 
@@ -52,7 +52,7 @@ public final class NumberExpressionFunctionLocalDateComponentTest extends Number
         );
     }
 
-    private void applyAndCheck3(final NumberExpressionFunctionLocalDateComponent<ExpressionFunctionContext> function, final int expected) {
+    private void applyAndCheck3(final NumberExpressionFunctionLocalDateComponent<ExpressionEvaluationContext> function, final int expected) {
         this.applyAndCheck2(
                 function,
                 Lists.of(DATE),
@@ -85,12 +85,12 @@ public final class NumberExpressionFunctionLocalDateComponentTest extends Number
     }
 
     @Override
-    public NumberExpressionFunctionLocalDateComponent<ExpressionFunctionContext> createBiFunction() {
+    public NumberExpressionFunctionLocalDateComponent<ExpressionEvaluationContext> createBiFunction() {
         return NumberExpressionFunctionLocalDateComponent.day();
     }
 
     @Override
-    public Class<NumberExpressionFunctionLocalDateComponent<ExpressionFunctionContext>> type() {
+    public Class<NumberExpressionFunctionLocalDateComponent<ExpressionEvaluationContext>> type() {
         return Cast.to(NumberExpressionFunctionLocalDateComponent.class);
     }
 }

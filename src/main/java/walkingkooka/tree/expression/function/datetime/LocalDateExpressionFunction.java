@@ -17,17 +17,17 @@
 
 package walkingkooka.tree.expression.function.datetime;
 
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionPurityContext;
 import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunction;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionKind;
 
 import java.time.LocalDate;
 import java.util.EnumSet;
 import java.util.Set;
 
-abstract class LocalDateExpressionFunction<C extends ExpressionFunctionContext> implements ExpressionFunction<LocalDate, C> {
+abstract class LocalDateExpressionFunction<C extends ExpressionEvaluationContext> implements ExpressionFunction<LocalDate, C> {
 
     LocalDateExpressionFunction(final String name) {
         super();

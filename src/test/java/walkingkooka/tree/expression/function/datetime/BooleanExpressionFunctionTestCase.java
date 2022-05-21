@@ -17,9 +17,9 @@
 
 package walkingkooka.tree.expression.function.datetime;
 
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 
-public abstract class BooleanExpressionFunctionTestCase<F extends BooleanExpressionFunction<ExpressionFunctionContext>> extends ExpressionFunctionTestCase<F, Boolean> {
+public abstract class BooleanExpressionFunctionTestCase<F extends BooleanExpressionFunction<ExpressionEvaluationContext>> extends ExpressionFunctionTestCase<F, Boolean> {
 
     BooleanExpressionFunctionTestCase() {
         super();
