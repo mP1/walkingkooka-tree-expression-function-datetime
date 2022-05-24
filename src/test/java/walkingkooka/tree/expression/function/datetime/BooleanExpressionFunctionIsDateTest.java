@@ -118,10 +118,9 @@ public final class BooleanExpressionFunctionIsDateTest extends BooleanExpression
             public <T> Either<T, String> convert(final Object value,
                                                  final Class<T> target) {
                 if (value instanceof LocalDate || value instanceof LocalDateTime || value instanceof LocalTime) {
-                    return Cast.to(
-                            Either.left(
-                                    value
-                            )
+                    return this.successfulConversion(
+                            value,
+                            target
                     );
                 }
 
@@ -131,10 +130,9 @@ public final class BooleanExpressionFunctionIsDateTest extends BooleanExpression
                         DateTimeFormatter.ISO_TIME
                 )) {
                     try {
-                        return Cast.to(
-                                Either.left(
-                                        formatter.parse((String) value)
-                                )
+                        return this.successfulConversion(
+                                formatter.parse((String) value),
+                                target
                         );
                     } catch (final Exception fail2) {
                     }

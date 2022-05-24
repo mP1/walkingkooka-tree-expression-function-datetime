@@ -18,7 +18,6 @@
 
 package walkingkooka.tree.expression.function.datetime;
 
-import walkingkooka.Cast;
 import walkingkooka.Either;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionNumber;
@@ -53,18 +52,16 @@ public abstract class NumberExpressionFunctionTestCase<F extends NumberExpressio
                                                  final Class<T> target) {
                 if(value instanceof LocalDate) {
                     final LocalDate localDate = (LocalDate) value;
-                    return Cast.to(
-                        Either.left(
-                            KIND.create(localDate.getYear())
-                        )
+                    return this.successfulConversion(
+                            KIND.create(localDate.getYear()),
+                            target
                     );
                 }
                 if(value instanceof LocalTime) {
                     checkEquals(TIME, value);
-                    return Cast.to(
-                            Either.left(
-                                    TIME_VALUE
-                            )
+                    return this.successfulConversion(
+                            TIME_VALUE,
+                            target
                     );
                 }
                 return this.failConversion(value, target);
