@@ -23,10 +23,13 @@ import walkingkooka.tree.expression.ExpressionNumberKind;
 import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public abstract class LocalDateExpressionFunctionTestCase<F extends LocalDateExpressionFunction<ExpressionEvaluationContext>> extends ExpressionFunctionTestCase<F, LocalDate> {
 
     final static ExpressionNumberKind KIND = ExpressionNumberKind.DEFAULT;
+
+    final static LocalDateTime NOW = LocalDateTime.of(1999, 12, 31, 12, 58, 59);
 
     final static int TWO_DIGIT_YEAR = 1900;
 
@@ -40,6 +43,11 @@ public abstract class LocalDateExpressionFunctionTestCase<F extends LocalDateExp
             @Override
             public ExpressionNumberKind expressionNumberKind() {
                 return KIND;
+            }
+
+            @Override
+            public LocalDateTime now() {
+                return NOW;
             }
 
             @Override
