@@ -19,20 +19,16 @@ package walkingkooka.tree.expression.function.datetime;
 
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
+import walkingkooka.collect.list.Lists;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
-
-import java.time.LocalDate;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public final class LocalDateExpressionFunctionTodayTest extends LocalDateExpressionFunctionTestCase<LocalDateExpressionFunctionToday<ExpressionEvaluationContext>> {
 
     @Test
     public void testApply() {
-        final LocalDate date = this.apply2();
-        assertTrue(
-                date.getYear() >= 2021,
-                () -> date + " year >= 2021"
+        this.applyAndCheck2(
+                Lists.empty(),
+                NOW.toLocalDate()
         );
     }
 

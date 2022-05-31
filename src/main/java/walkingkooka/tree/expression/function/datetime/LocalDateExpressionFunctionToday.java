@@ -51,6 +51,6 @@ final class LocalDateExpressionFunctionToday<C extends ExpressionEvaluationConte
                            final C context) {
         this.checkParameterCount(parameters);
 
-        return LocalDate.now();
+        return context.now().toLocalDate();
     }
 }
