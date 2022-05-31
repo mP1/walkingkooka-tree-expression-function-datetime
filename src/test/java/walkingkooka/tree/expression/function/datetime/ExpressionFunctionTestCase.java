@@ -28,12 +28,15 @@ import walkingkooka.tree.expression.function.ExpressionFunction;
 import walkingkooka.tree.expression.function.ExpressionFunctionKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionTesting;
 
+import java.time.LocalDateTime;
 import java.util.EnumSet;
 
 public abstract class ExpressionFunctionTestCase<F extends ExpressionFunction<T, ExpressionEvaluationContext>, T> implements ExpressionFunctionTesting<F, T, ExpressionEvaluationContext>,
         ExpressionPurityTesting,
         TypeNameTesting<F>,
         ClassTesting2<F> {
+
+    final static LocalDateTime NOW = LocalDateTime.of(1999, 12, 31, 12, 58, 59);
 
     ExpressionFunctionTestCase() {
         super();

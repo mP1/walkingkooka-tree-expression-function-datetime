@@ -29,8 +29,6 @@ public abstract class LocalDateExpressionFunctionTestCase<F extends LocalDateExp
 
     final static ExpressionNumberKind KIND = ExpressionNumberKind.DEFAULT;
 
-    final static LocalDateTime NOW = LocalDateTime.of(1999, 12, 31, 12, 58, 59);
-
     final static int TWO_DIGIT_YEAR = 1900;
 
     LocalDateExpressionFunctionTestCase() {
