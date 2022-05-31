@@ -19,7 +19,7 @@
 package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
-import walkingkooka.tree.expression.ExpressionEvaluationContexts;
+import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 
 import java.time.LocalDateTime;
 
@@ -31,7 +31,12 @@ public abstract class LocalDateTimeExpressionFunctionTestCase<F extends LocalDat
 
     @Override
     public ExpressionEvaluationContext createContext() {
-        return ExpressionEvaluationContexts.fake();
+        return new FakeExpressionEvaluationContext() {
+            @Override
+            public LocalDateTime now() {
+                return NOW;
+            }
+        };
     }
 
     @Override
