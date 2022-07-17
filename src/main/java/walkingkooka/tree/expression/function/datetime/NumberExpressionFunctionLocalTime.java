@@ -111,7 +111,7 @@ final class NumberExpressionFunctionLocalTime<C extends ExpressionEvaluationCont
     private final Function<LocalTime, Integer> mapper;
 
     @Override
-    public List<ExpressionFunctionParameter<?>> parameters() {
+    public List<ExpressionFunctionParameter<?>> parameters(final int count) {
         return PARAMETERS;
     }
 

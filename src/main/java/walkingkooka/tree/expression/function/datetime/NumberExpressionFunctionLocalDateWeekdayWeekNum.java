@@ -231,7 +231,7 @@ final class NumberExpressionFunctionLocalDateWeekdayWeekNum<C extends Expression
     private final BiFunction<LocalDate, Integer, Integer> mapper;
 
     @Override
-    public List<ExpressionFunctionParameter<?>> parameters() {
+    public List<ExpressionFunctionParameter<?>> parameters(final int count) {
         return PARAMETERS;
     }
 
