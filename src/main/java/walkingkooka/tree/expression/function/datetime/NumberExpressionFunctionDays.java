@@ -62,11 +62,11 @@ final class NumberExpressionFunctionDays<C extends ExpressionEvaluationContext> 
 
     private final static ExpressionFunctionParameter<LocalDate> DATE1 = ExpressionFunctionParameterName.with("date1")
             .required(LocalDate.class)
-            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_RESOLVE_REFERENCES);
 
     private final static ExpressionFunctionParameter<LocalDate> DATE2 = ExpressionFunctionParameterName.with("date2")
             .required(LocalDate.class)
-            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_RESOLVE_REFERENCES);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             DATE1,

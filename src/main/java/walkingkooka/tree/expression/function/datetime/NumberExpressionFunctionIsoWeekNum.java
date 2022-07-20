@@ -53,7 +53,7 @@ final class NumberExpressionFunctionIsoWeekNum<C extends ExpressionEvaluationCon
     }
 
     private final static ExpressionFunctionParameter<LocalDate> DATE = ExpressionFunctionParameter.DATE
-            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_RESOLVE_REFERENCES);
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters(final int count) {

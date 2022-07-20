@@ -58,11 +58,11 @@ final class LocalDateExpressionFunctionDateMonthAdd<C extends ExpressionEvaluati
     }
 
     private final static ExpressionFunctionParameter<LocalDate> DATE = ExpressionFunctionParameter.DATE
-            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_RESOLVE_REFERENCES);
 
     private final static ExpressionFunctionParameter<ExpressionNumber> MONTHS = ExpressionFunctionParameterName.with("months")
             .required(ExpressionNumber.class)
-            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_RESOLVE_REFERENCES);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             DATE,
