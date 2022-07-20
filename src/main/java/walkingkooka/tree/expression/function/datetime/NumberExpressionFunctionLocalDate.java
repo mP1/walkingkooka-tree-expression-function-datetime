@@ -36,5 +36,5 @@ abstract class NumberExpressionFunctionLocalDate<C extends ExpressionEvaluationC
     }
 
     final static ExpressionFunctionParameter<LocalDate> DATE = ExpressionFunctionParameter.DATE
-            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_RESOLVE_REFERENCES);
 }
