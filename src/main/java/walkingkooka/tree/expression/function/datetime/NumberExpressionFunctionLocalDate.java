@@ -19,6 +19,7 @@ package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
+import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 
 import java.time.LocalDate;
 
@@ -34,5 +35,6 @@ abstract class NumberExpressionFunctionLocalDate<C extends ExpressionEvaluationC
         super(name);
     }
 
-    final static ExpressionFunctionParameter<LocalDate> DATE = ExpressionFunctionParameter.DATE;
+    final static ExpressionFunctionParameter<LocalDate> DATE = ExpressionFunctionParameter.DATE
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
 }

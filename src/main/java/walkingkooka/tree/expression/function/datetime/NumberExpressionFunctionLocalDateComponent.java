@@ -110,7 +110,5 @@ final class NumberExpressionFunctionLocalDateComponent<C extends ExpressionEvalu
         return PARAMETERS;
     }
 
-    private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
-            DATE
-    );
+    private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(DATE);
 }

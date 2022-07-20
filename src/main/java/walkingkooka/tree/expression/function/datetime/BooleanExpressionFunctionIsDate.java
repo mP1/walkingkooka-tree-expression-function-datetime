@@ -20,6 +20,7 @@ package walkingkooka.tree.expression.function.datetime;
 import walkingkooka.Cast;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
+import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -61,6 +62,10 @@ final class BooleanExpressionFunctionIsDate<C extends ExpressionEvaluationContex
                 isConvertable(value, LocalTime.class, context);
     }
 
+    private final static ExpressionFunctionParameter<?> VALUE = ExpressionFunctionParameter.VALUE.setKinds(
+            ExpressionFunctionParameterKind.EVALUATE_RESOLVE_REFERENCES
+    );
+
     /**
      * Returns true if the value can be converted to the requested target type.
      */
@@ -78,7 +83,5 @@ final class BooleanExpressionFunctionIsDate<C extends ExpressionEvaluationContex
         return PARAMETERS;
     }
 
-    private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
-            ExpressionFunctionParameter.VALUE
-    );
+    private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(VALUE);
 }

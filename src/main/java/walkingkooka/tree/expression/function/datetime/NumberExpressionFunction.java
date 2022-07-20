@@ -22,10 +22,6 @@ import walkingkooka.tree.expression.ExpressionNumber;
 import walkingkooka.tree.expression.ExpressionPurityContext;
 import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunction;
-import walkingkooka.tree.expression.function.ExpressionFunctionKind;
-
-import java.util.EnumSet;
-import java.util.Set;
 
 abstract class NumberExpressionFunction<C extends ExpressionEvaluationContext> implements ExpressionFunction<ExpressionNumber, C> {
 
@@ -45,17 +41,6 @@ abstract class NumberExpressionFunction<C extends ExpressionEvaluationContext> i
     public final Class<ExpressionNumber> returnType() {
         return ExpressionNumber.class;
     }
-
-    @Override
-    public final Set<ExpressionFunctionKind> kinds() {
-        return KINDS;
-    }
-
-    private final Set<ExpressionFunctionKind> KINDS = EnumSet.of(
-            ExpressionFunctionKind.CONVERT_PARAMETERS,
-            ExpressionFunctionKind.EVALUATE_PARAMETERS,
-            ExpressionFunctionKind.RESOLVE_REFERENCES
-    );
 
     @Override
     public final boolean isPure(ExpressionPurityContext expressionPurityContext) {

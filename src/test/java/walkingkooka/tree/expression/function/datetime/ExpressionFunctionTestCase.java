@@ -25,11 +25,9 @@ import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionEvaluationContexts;
 import walkingkooka.tree.expression.ExpressionPurityTesting;
 import walkingkooka.tree.expression.function.ExpressionFunction;
-import walkingkooka.tree.expression.function.ExpressionFunctionKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionTesting;
 
 import java.time.LocalDateTime;
-import java.util.EnumSet;
 
 public abstract class ExpressionFunctionTestCase<F extends ExpressionFunction<T, ExpressionEvaluationContext>, T> implements ExpressionFunctionTesting<F, T, ExpressionEvaluationContext>,
         ExpressionPurityTesting,
@@ -50,18 +48,6 @@ public abstract class ExpressionFunctionTestCase<F extends ExpressionFunction<T,
                 function,
                 ExpressionEvaluationContexts.fake(),
                 !(function instanceof LocalDateExpressionFunctionToday || function instanceof LocalDateTimeExpressionFunctionNow)
-        );
-    }
-
-    @Test
-    public final void testKind() {
-        this.checkEquals(
-                EnumSet.of(
-                        ExpressionFunctionKind.CONVERT_PARAMETERS,
-                        ExpressionFunctionKind.EVALUATE_PARAMETERS,
-                        ExpressionFunctionKind.RESOLVE_REFERENCES
-                ),
-                this.createBiFunction().kinds()
         );
     }
 
