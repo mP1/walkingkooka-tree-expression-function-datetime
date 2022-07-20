@@ -21,7 +21,9 @@ import walkingkooka.Cast;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionNumber;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
+import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 
+import java.time.LocalDate;
 import java.time.temporal.IsoFields;
 import java.util.List;
 
@@ -39,23 +41,24 @@ final class NumberExpressionFunctionIsoWeekNum<C extends ExpressionEvaluationCon
     }
 
     @Override
-    public List<ExpressionFunctionParameter<?>> parameters(final int count) {
-        return PARAMETERS;
-    }
-
-    private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
-            ExpressionFunctionParameter.DATE
-    );
-
-    @Override
     public ExpressionNumber apply(final List<Object> parameters,
                                   final C context) {
         return context.expressionNumberKind()
                 .create(
-                        ExpressionFunctionParameter.DATE.getOrFail(parameters, 0)
+                        DATE.getOrFail(parameters, 0)
                                 .get(
                                         IsoFields.WEEK_OF_WEEK_BASED_YEAR
                                 )
                 );
     }
+
+    private final static ExpressionFunctionParameter<LocalDate> DATE = ExpressionFunctionParameter.DATE
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
+
+    @Override
+    public List<ExpressionFunctionParameter<?>> parameters(final int count) {
+        return PARAMETERS;
+    }
+
+    private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(DATE);
 }

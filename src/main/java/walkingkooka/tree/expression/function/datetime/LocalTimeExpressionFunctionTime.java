@@ -21,6 +21,7 @@ import walkingkooka.Cast;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionNumber;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
+import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
 import java.time.LocalTime;
@@ -59,13 +60,16 @@ final class LocalTimeExpressionFunctionTime<C extends ExpressionEvaluationContex
     }
 
     private final static ExpressionFunctionParameter<ExpressionNumber> HOUR = ExpressionFunctionParameterName.with("hour")
-            .required(ExpressionNumber.class);
+            .required(ExpressionNumber.class)
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
 
     private final static ExpressionFunctionParameter<ExpressionNumber> MINUTE = ExpressionFunctionParameterName.with("minute")
-            .required(ExpressionNumber.class);
+            .required(ExpressionNumber.class)
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
 
     private final static ExpressionFunctionParameter<ExpressionNumber> SECOND = ExpressionFunctionParameterName.with("second")
-            .required(ExpressionNumber.class);
+            .required(ExpressionNumber.class)
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             HOUR,

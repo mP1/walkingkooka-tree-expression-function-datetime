@@ -21,6 +21,7 @@ import walkingkooka.Cast;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionNumber;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
+import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
 import java.time.LocalDate;
@@ -56,10 +57,12 @@ final class LocalDateExpressionFunctionDateMonthAdd<C extends ExpressionEvaluati
         return PARAMETERS;
     }
 
-    private final static ExpressionFunctionParameter<LocalDate> DATE = ExpressionFunctionParameter.DATE;
+    private final static ExpressionFunctionParameter<LocalDate> DATE = ExpressionFunctionParameter.DATE
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
 
     private final static ExpressionFunctionParameter<ExpressionNumber> MONTHS = ExpressionFunctionParameterName.with("months")
-            .required(ExpressionNumber.class);
+            .required(ExpressionNumber.class)
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             DATE,
