@@ -89,6 +89,11 @@ public final class NumberExpressionFunctionDaysTest extends NumberExpressionFunc
     }
 
     @Override
+    public int minimumParameterCount() {
+        return 1;
+    }
+
+    @Override
     public Class<NumberExpressionFunctionDays<ExpressionEvaluationContext>> type() {
         return Cast.to(NumberExpressionFunctionDays.class);
     }

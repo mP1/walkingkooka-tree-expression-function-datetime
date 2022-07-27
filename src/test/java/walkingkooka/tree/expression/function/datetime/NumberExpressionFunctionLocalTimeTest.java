@@ -120,6 +120,11 @@ public final class NumberExpressionFunctionLocalTimeTest extends NumberExpressio
     }
 
     @Override
+    public int minimumParameterCount() {
+        return 1;
+    }
+
+    @Override
     public Class<NumberExpressionFunctionLocalTime<ExpressionEvaluationContext>> type() {
         return Cast.to(NumberExpressionFunctionLocalTime.class);
     }

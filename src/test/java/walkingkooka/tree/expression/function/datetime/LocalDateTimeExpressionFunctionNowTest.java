@@ -43,6 +43,11 @@ public final class LocalDateTimeExpressionFunctionNowTest extends LocalDateTimeE
     }
 
     @Override
+    public int minimumParameterCount() {
+        return 0;
+    }
+
+    @Override
     public Class<LocalDateTimeExpressionFunctionNow<ExpressionEvaluationContext>> type() {
         return Cast.to(LocalDateTimeExpressionFunctionNow.class);
     }

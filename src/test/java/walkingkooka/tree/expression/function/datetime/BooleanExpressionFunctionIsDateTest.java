@@ -112,6 +112,11 @@ public final class BooleanExpressionFunctionIsDateTest extends BooleanExpression
     }
 
     @Override
+    public int minimumParameterCount() {
+        return 1;
+    }
+
+    @Override
     public ExpressionEvaluationContext createContext() {
         return new FakeExpressionEvaluationContext() {
             @Override

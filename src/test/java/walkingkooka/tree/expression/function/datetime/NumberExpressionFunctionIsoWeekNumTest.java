@@ -130,6 +130,11 @@ public final class NumberExpressionFunctionIsoWeekNumTest extends NumberExpressi
     }
 
     @Override
+    public int minimumParameterCount() {
+        return 1;
+    }
+
+    @Override
     public Class<NumberExpressionFunctionIsoWeekNum<ExpressionEvaluationContext>> type() {
         return Cast.to(NumberExpressionFunctionIsoWeekNum.class);
     }

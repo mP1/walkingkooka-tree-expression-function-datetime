@@ -747,6 +747,11 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     @Override
+    public int minimumParameterCount() {
+        return 1;
+    }
+
+    @Override
     public Class<NumberExpressionFunctionLocalDateWeekdayWeekNum<ExpressionEvaluationContext>> type() {
         return Cast.to(NumberExpressionFunctionLocalDateWeekdayWeekNum.class);
     }

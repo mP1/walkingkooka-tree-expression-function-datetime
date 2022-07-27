@@ -90,6 +90,11 @@ public final class NumberExpressionFunctionLocalDateComponentTest extends Number
     }
 
     @Override
+    public int minimumParameterCount() {
+        return 1;
+    }
+
+    @Override
     public Class<NumberExpressionFunctionLocalDateComponent<ExpressionEvaluationContext>> type() {
         return Cast.to(NumberExpressionFunctionLocalDateComponent.class);
     }
