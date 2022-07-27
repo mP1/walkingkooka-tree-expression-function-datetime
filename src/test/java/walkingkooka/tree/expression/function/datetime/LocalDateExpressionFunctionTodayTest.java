@@ -43,6 +43,11 @@ public final class LocalDateExpressionFunctionTodayTest extends LocalDateExpress
     }
 
     @Override
+    public int minimumParameterCount() {
+        return 0;
+    }
+
+    @Override
     public Class<LocalDateExpressionFunctionToday<ExpressionEvaluationContext>> type() {
         return Cast.to(LocalDateExpressionFunctionToday.class);
     }

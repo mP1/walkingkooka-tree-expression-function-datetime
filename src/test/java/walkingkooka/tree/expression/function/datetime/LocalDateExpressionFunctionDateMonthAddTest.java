@@ -95,6 +95,11 @@ public final class LocalDateExpressionFunctionDateMonthAddTest extends LocalDate
     }
 
     @Override
+    public int minimumParameterCount() {
+        return 2;
+    }
+
+    @Override
     public Class<LocalDateExpressionFunctionDateMonthAdd<ExpressionEvaluationContext>> type() {
         return Cast.to(LocalDateExpressionFunctionDateMonthAdd.class);
     }

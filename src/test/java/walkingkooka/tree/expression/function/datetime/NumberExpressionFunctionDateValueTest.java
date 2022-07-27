@@ -51,6 +51,11 @@ public final class NumberExpressionFunctionDateValueTest extends NumberExpressio
     }
 
     @Override
+    public int minimumParameterCount() {
+        return 1;
+    }
+
+    @Override
     public Class<NumberExpressionFunctionDateValue<ExpressionEvaluationContext>> type() {
         return Cast.to(NumberExpressionFunctionDateValue.class);
     }

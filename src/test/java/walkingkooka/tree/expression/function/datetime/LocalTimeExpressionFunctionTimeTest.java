@@ -178,6 +178,11 @@ public final class LocalTimeExpressionFunctionTimeTest extends LocalTimeExpressi
     }
 
     @Override
+    public int minimumParameterCount() {
+        return 3;
+    }
+
+    @Override
     public Class<LocalTimeExpressionFunctionTime<ExpressionEvaluationContext>> type() {
         return Cast.to(LocalTimeExpressionFunctionTime.class);
     }
