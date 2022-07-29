@@ -23,20 +23,23 @@ import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunction;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 abstract class LocalDateExpressionFunction<C extends ExpressionEvaluationContext> implements ExpressionFunction<LocalDate, C> {
 
     LocalDateExpressionFunction(final String name) {
         super();
-        this.name = FunctionExpressionName.with(name);
+        this.name = Optional.of(
+                FunctionExpressionName.with(name)
+        );
     }
 
     @Override
-    public final FunctionExpressionName name() {
+    public final Optional<FunctionExpressionName> name() {
         return this.name;
     }
 
-    private final FunctionExpressionName name;
+    private final Optional<FunctionExpressionName> name;
 
     @Override
     public final Class<LocalDate> returnType() {
@@ -50,6 +53,8 @@ abstract class LocalDateExpressionFunction<C extends ExpressionEvaluationContext
 
     @Override
     public final String toString() {
-        return this.name().toString();
+        return this.name()
+                .get()
+                .toString();
     }
 }
