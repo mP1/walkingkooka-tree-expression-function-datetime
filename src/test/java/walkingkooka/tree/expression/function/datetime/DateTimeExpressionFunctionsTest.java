@@ -35,7 +35,7 @@ public final class DateTimeExpressionFunctionsTest implements PublicStaticHelper
     @Test
     public void testVisit() {
         final Set<FunctionExpressionName> names = Sets.sorted();
-        DateTimeExpressionFunctions.visit((e) -> names.add(e.name()));
+        DateTimeExpressionFunctions.visit((e) -> names.add(e.name().get()));
 
         this.checkEquals(Arrays.stream(DateTimeExpressionFunctions.class.getDeclaredMethods())
                         .filter(m -> m.getReturnType() == ExpressionFunction.class)
@@ -43,7 +43,10 @@ public final class DateTimeExpressionFunctionsTest implements PublicStaticHelper
                         .collect(Collectors.toCollection(Sets::sorted))
                         .size(),
                 names.size());
-        this.checkEquals(true, names.contains(DateTimeExpressionFunctions.hour().name()));
+        this.checkEquals(
+                true,
+                names.contains(DateTimeExpressionFunctions.hour().name().get())
+        );
     }
 
     @Test
