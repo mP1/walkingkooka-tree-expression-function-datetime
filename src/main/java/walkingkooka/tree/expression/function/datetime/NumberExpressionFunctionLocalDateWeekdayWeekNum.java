@@ -20,7 +20,6 @@ package walkingkooka.tree.expression.function.datetime;
 import walkingkooka.Cast;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionNumber;
-import walkingkooka.tree.expression.ExpressionNumberKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
@@ -29,6 +28,7 @@ import java.time.LocalDate;
 import java.time.temporal.TemporalField;
 import java.time.temporal.WeekFields;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.BiFunction;
 
 /**
@@ -219,7 +219,8 @@ final class NumberExpressionFunctionLocalDateWeekdayWeekNum<C extends Expression
                         this.mapper.apply(
                                 DATE.getOrFail(parameters, 0),
                                 TYPE.get(parameters, 1)
-                                        .orElse(ONE)
+                                        .orElseGet(() -> Optional.of(context.expressionNumberKind().one()))
+                                        .get()
                                         .intValue()
                         )
                 );
@@ -239,6 +240,4 @@ final class NumberExpressionFunctionLocalDateWeekdayWeekNum<C extends Expression
             DATE,
             TYPE
     );
-
-    private final static ExpressionNumber ONE = ExpressionNumberKind.DEFAULT.one();
 }
