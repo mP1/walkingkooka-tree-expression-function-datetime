@@ -20,6 +20,12 @@ import com.google.j2cl.junit.apt.J2clTestInput;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.time.LocalDateTime;
+
+import walkingkooka.collect.list.Lists;
+import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
+import walkingkooka.tree.expression.function.datetime.DateTimeExpressionFunctions;
+
 @J2clTestInput(JunitTest.class)
 public class JunitTest {
 
@@ -28,6 +34,25 @@ public class JunitTest {
         Assert.assertEquals(
                 true,
                 true
+        );
+    }
+
+    @Test
+    public void testNow() {
+        final LocalDateTime now = LocalDateTime.now();
+
+        Assert.assertEquals(
+                now,
+                DateTimeExpressionFunctions.now()
+                        .apply(
+                                Lists.of(),
+                                new FakeExpressionEvaluationContext() {
+                                    @Override
+                                    public LocalDateTime now() {
+                                        return now;
+                                    }
+                                }
+                        )
         );
     }
 }
