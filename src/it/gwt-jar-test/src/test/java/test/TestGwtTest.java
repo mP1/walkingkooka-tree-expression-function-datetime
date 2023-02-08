@@ -5,9 +5,11 @@ import com.google.gwt.junit.client.GWTTestCase;
 import java.time.LocalDateTime;
 
 import walkingkooka.collect.list.Lists;
+import walkingkooka.j2cl.locale.LocaleAware;
 import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.datetime.DateTimeExpressionFunctions;
 
+@LocaleAware
 public class TestGwtTest extends GWTTestCase {
 
     @Override
