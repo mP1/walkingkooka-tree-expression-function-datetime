@@ -17,16 +17,18 @@
 
 package walkingkooka.tree.expression.function.datetime;
 
-import walkingkooka.collect.list.Lists;
+import walkingkooka.collect.set.Sets;
+import walkingkooka.net.Url;
 import walkingkooka.reflect.PublicStaticHelper;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionNumber;
 import walkingkooka.tree.expression.function.ExpressionFunction;
+import walkingkooka.tree.expression.function.provider.ExpressionFunctionProvider;
+import walkingkooka.tree.expression.function.provider.ExpressionFunctionProviders;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.function.Consumer;
 
 /**
  * Collection of static factory methods for numerous {@link ExpressionFunction}.
@@ -34,29 +36,32 @@ import java.util.function.Consumer;
 public final class DateTimeExpressionFunctions implements PublicStaticHelper {
 
     /**
-     * Visit all {@link ExpressionFunction functions}.
+     * An {@link ExpressionFunctionProvider} with all the functions in this project.
      */
-    public static void visit(final Consumer<ExpressionFunction<?, ?>> consumer) {
-        Lists.of(
-                date(),
-                dateMonthAdd(),
-                dateValue(),
-                day(),
-                days(),
-                hour(),
-                isDate(),
-                isoWeekNum(),
-                minute(),
-                month(),
-                now(),
-                second(),
-                time(),
-                timeValue(),
-                today(),
-                weekday(),
-                weekNum(),
-                year()
-        ).forEach(consumer);
+    public static ExpressionFunctionProvider expressionFunctionProvider() {
+        return ExpressionFunctionProviders.basic(
+                Url.parseAbsolute("https://github.com/mP1/walkingkooka-tree-expression-function-datetime/"),
+                Sets.of(
+                        date(),
+                        dateMonthAdd(),
+                        dateValue(),
+                        day(),
+                        days(),
+                        hour(),
+                        isDate(),
+                        isoWeekNum(),
+                        minute(),
+                        month(),
+                        now(),
+                        second(),
+                        time(),
+                        timeValue(),
+                        today(),
+                        weekday(),
+                        weekNum(),
+                        year()
+                )
+        );
     }
 
     /**
