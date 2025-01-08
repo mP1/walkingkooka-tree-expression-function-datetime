@@ -37,7 +37,7 @@ public abstract class LocalDateExpressionFunctionTestCase<F extends LocalDateExp
 
     @Override
     public final ExpressionEvaluationContext createContext() {
-        return new FakeExpressionEvaluationContext(){
+        return new FakeExpressionEvaluationContext() {
             @Override
             public ExpressionNumberKind expressionNumberKind() {
                 return KIND;
