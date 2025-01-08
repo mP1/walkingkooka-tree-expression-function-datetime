@@ -26,7 +26,7 @@ import java.time.LocalTime;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public final class LocalTimeExpressionFunctionTimeTest extends LocalTimeExpressionFunctionTestCase<LocalTimeExpressionFunctionTime<ExpressionEvaluationContext>>  {
+public final class LocalTimeExpressionFunctionTimeTest extends LocalTimeExpressionFunctionTestCase<LocalTimeExpressionFunctionTime<ExpressionEvaluationContext>> {
 
     @Test
     public void testInvalidHourFails() {
@@ -154,9 +154,9 @@ public final class LocalTimeExpressionFunctionTimeTest extends LocalTimeExpressi
     }
 
     private void timeAndCheck(final int hours,
-                               final int minutes,
-                               final int seconds,
-                               final LocalTime expected) {
+                              final int minutes,
+                              final int seconds,
+                              final LocalTime expected) {
         this.applyAndCheck2(
                 Lists.of(
                         KIND.create(hours),
@@ -168,7 +168,7 @@ public final class LocalTimeExpressionFunctionTimeTest extends LocalTimeExpressi
     }
 
     @Test
-    public void testToString(){
+    public void testToString() {
         this.toStringAndCheck(this.createBiFunction(), "time");
     }
 

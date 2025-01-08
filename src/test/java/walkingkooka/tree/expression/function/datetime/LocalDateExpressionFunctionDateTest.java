@@ -26,7 +26,7 @@ import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public final class LocalDateExpressionFunctionDateTest extends LocalDateExpressionFunctionTestCase<LocalDateExpressionFunctionDate<ExpressionEvaluationContext>>  {
+public final class LocalDateExpressionFunctionDateTest extends LocalDateExpressionFunctionTestCase<LocalDateExpressionFunctionDate<ExpressionEvaluationContext>> {
 
     @Test
     public void testInvalidYearFails() {
@@ -134,7 +134,7 @@ public final class LocalDateExpressionFunctionDateTest extends LocalDateExpressi
     }
 
     @Test
-    public void testToString(){
+    public void testToString() {
         this.toStringAndCheck(this.createBiFunction(), "date");
     }
 

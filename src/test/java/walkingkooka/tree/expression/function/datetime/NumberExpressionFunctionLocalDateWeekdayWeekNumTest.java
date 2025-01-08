@@ -402,7 +402,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
                 53
         );
     }
-    
+
     // type 2
 
     @Test
@@ -678,13 +678,13 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
     }
 
     private void testWeeknum(final int type, final DayOfWeek dayOfWeek) {
-        for(int y = 2000; y < 2021; y++) {
+        for (int y = 2000; y < 2021; y++) {
             final LocalDate date = LocalDate.of(y, 1, 1);
             int week = 1;
 
-            for(int i = 0; i < 365; i++) {
+            for (int i = 0; i < 365; i++) {
                 final LocalDate date2 = date.plusDays(i);
-                if(i > 0 && date2.getDayOfWeek() == dayOfWeek) {
+                if (i > 0 && date2.getDayOfWeek() == dayOfWeek) {
                     week++;
                 }
 
@@ -732,7 +732,7 @@ public final class NumberExpressionFunctionLocalDateWeekdayWeekNumTest extends N
         );
     }
     // toString........................................................................................................
-    
+
     @Test
     public void testToStringWeekday() {
         this.toStringAndCheck(

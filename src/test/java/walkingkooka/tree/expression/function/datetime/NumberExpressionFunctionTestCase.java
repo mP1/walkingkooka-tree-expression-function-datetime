@@ -41,7 +41,7 @@ public abstract class NumberExpressionFunctionTestCase<F extends NumberExpressio
 
     @Override
     public final ExpressionEvaluationContext createContext() {
-        return new FakeExpressionEvaluationContext(){
+        return new FakeExpressionEvaluationContext() {
             @Override
             public ExpressionNumberKind expressionNumberKind() {
                 return KIND;
@@ -50,14 +50,14 @@ public abstract class NumberExpressionFunctionTestCase<F extends NumberExpressio
             @Override
             public <T> Either<T, String> convert(final Object value,
                                                  final Class<T> target) {
-                if(value instanceof LocalDate) {
+                if (value instanceof LocalDate) {
                     final LocalDate localDate = (LocalDate) value;
                     return this.successfulConversion(
                             KIND.create(localDate.getYear()),
                             target
                     );
                 }
-                if(value instanceof LocalTime) {
+                if (value instanceof LocalTime) {
                     checkEquals(TIME, value);
                     return this.successfulConversion(
                             TIME_VALUE,

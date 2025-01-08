@@ -34,7 +34,7 @@ public abstract class LocalTimeExpressionFunctionTestCase<F extends LocalTimeExp
 
     @Override
     public final ExpressionEvaluationContext createContext() {
-        return new FakeExpressionEvaluationContext(){
+        return new FakeExpressionEvaluationContext() {
             @Override
             public ExpressionNumberKind expressionNumberKind() {
                 return KIND;
