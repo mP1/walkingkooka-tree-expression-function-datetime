@@ -19,6 +19,7 @@ package walkingkooka.tree.expression.function.datetime;
 
 import walkingkooka.Cast;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
+import walkingkooka.tree.expression.function.ExpressionFunction;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
 import java.time.LocalDate;
@@ -41,10 +42,8 @@ final class LocalDateExpressionFunctionToday<C extends ExpressionEvaluationConte
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters(final int count) {
-        return PARAMETERS;
+        return ExpressionFunction.NO_PARAMETERS;
     }
-
-    private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list();
 
     @Override
     public LocalDate apply(final List<Object> parameters,
