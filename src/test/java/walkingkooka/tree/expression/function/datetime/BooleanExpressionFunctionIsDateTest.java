@@ -19,81 +19,79 @@ package walkingkooka.tree.expression.function.datetime;
 
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
-import walkingkooka.Either;
 import walkingkooka.collect.list.Lists;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
-import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContexts;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 
 public final class BooleanExpressionFunctionIsDateTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunctionIsDate<ExpressionEvaluationContext>> {
 
     @Test
     public void testNullParameterFalse() {
-        this.isNumberAndCheck(null, false);
+        this.applyFunctionAndCheck(null, false);
     }
 
     @Test
-    public void testStringParameterFalse() {
-        this.isNumberAndCheck(
+    public void testApplyStringParameterFalse() {
+        this.applyFunctionAndCheck(
                 "String123",
                 false
         );
     }
 
     @Test
-    public void testConvertedDateTrue() {
-        this.isNumberAndCheck(
+    public void testApplyStringDate() {
+        this.applyFunctionAndCheck(
                 "1999-12-31",
-                true
+                false
         );
     }
 
     @Test
-    public void testConvertedDateTimeTrue() {
-        this.isNumberAndCheck(
+    public void testApplyStringDateTime() {
+        this.applyFunctionAndCheck(
                 "1999-12-31T12:58:59",
-                true
+                false
         );
     }
 
     @Test
-    public void testConvertedTimeTrue() {
-        this.isNumberAndCheck(
+    public void testApplyStringTime() {
+        this.applyFunctionAndCheck(
                 "12:58:59",
-                true
+                false
         );
     }
 
     @Test
-    public void testLocalDateParameterTrue() {
-        this.isNumberAndCheck(
+    public void testApplyLocalDate() {
+        this.applyFunctionAndCheck(
                 LocalDate.now(),
                 true
         );
     }
 
     @Test
-    public void testLocalDateTimeParameterTrue() {
-        this.isNumberAndCheck(
+    public void testApplyLocalDateTime() {
+        this.applyFunctionAndCheck(
                 LocalDateTime.now(),
                 true
         );
     }
 
     @Test
-    public void testLocalTimeParameterTrue() {
-        this.isNumberAndCheck(
+    public void testApplyLocalTime() {
+        this.applyFunctionAndCheck(
                 LocalTime.now(),
-                true
+                false
         );
     }
 
-    private void isNumberAndCheck(final Object parameter,
-                                  final boolean expected) {
+    private void applyFunctionAndCheck(final Object parameter, 
+                                       final boolean expected) {
         this.applyAndCheck(
                 Lists.of(parameter),
                 this.createContext(),
@@ -118,37 +116,7 @@ public final class BooleanExpressionFunctionIsDateTest extends BooleanExpression
 
     @Override
     public ExpressionEvaluationContext createContext() {
-        return new FakeExpressionEvaluationContext() {
-            @Override
-            public <T> Either<T, String> convert(final Object value,
-                                                 final Class<T> target) {
-                if (value instanceof LocalDate || value instanceof LocalDateTime || value instanceof LocalTime) {
-                    return this.successfulConversion(
-                            value,
-                            target
-                    );
-                }
-
-                for (final DateTimeFormatter formatter : Lists.of(
-                        DateTimeFormatter.ISO_DATE,
-                        DateTimeFormatter.ISO_DATE_TIME,
-                        DateTimeFormatter.ISO_TIME
-                )) {
-                    try {
-                        return this.successfulConversion(
-                                formatter.parse((String) value),
-                                target
-                        );
-                    } catch (final Exception fail2) {
-                    }
-                }
-
-                return this.failConversion(
-                        value,
-                        target
-                );
-            }
-        };
+        return ExpressionEvaluationContexts.fake();
     }
 
     @Override
