@@ -24,12 +24,11 @@ import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.List;
 
 /**
  * A {@link walkingkooka.tree.expression.function.ExpressionFunction} that requires a single parameter, and returns true
- * if it isConvertable a {@link LocalDate}, {@link LocalDateTime} or {@link LocalTime}.
+ * if the value is a {@link LocalDate} or {@link LocalDateTime} without attempting to convert the value.
  */
 // https://support.google.com/docs/answer/9061381?hl=en&ref_topic=3105471
 final class BooleanExpressionFunctionIsDate<C extends ExpressionEvaluationContext> extends BooleanExpressionFunction<C> {
@@ -57,26 +56,13 @@ final class BooleanExpressionFunctionIsDate<C extends ExpressionEvaluationContex
 
         final Object value = ExpressionFunctionParameter.VALUE.getOrFail(parameters, 0);
 
-        return isConvertable(value, LocalDate.class, context) ||
-                isConvertable(value, LocalDateTime.class, context) ||
-                isConvertable(value, LocalTime.class, context);
+        return value instanceof LocalDate ||
+                value instanceof LocalDateTime;
     }
 
     private final static ExpressionFunctionParameter<?> VALUE = ExpressionFunctionParameter.VALUE.setKinds(
             ExpressionFunctionParameterKind.EVALUATE_RESOLVE_REFERENCES
     );
-
-    /**
-     * Returns true if the value can be converted to the requested target type.
-     */
-    private boolean isConvertable(final Object value,
-                                  final Class<?> type,
-                                  final C context) {
-        return context.convert(
-                value,
-                type
-        ).isLeft();
-    }
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters(final int count) {
