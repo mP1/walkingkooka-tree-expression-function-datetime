@@ -48,7 +48,7 @@ final class NumberExpressionFunctionTimeValue<C extends ExpressionEvaluationCont
         this.checkParameterCount(parameters);
 
         return context.convertOrFail(
-                TIME.getOrFail(parameters, 0, context),
+                TIME.getOrFail(parameters, 0),
                 ExpressionNumber.class
         );
     }

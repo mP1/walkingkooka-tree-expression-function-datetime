@@ -54,7 +54,7 @@ final class BooleanExpressionFunctionIsDate<C extends ExpressionEvaluationContex
                          final C context) {
         this.checkParameterCount(parameters);
 
-        final Object value = ExpressionFunctionParameter.VALUE.getOrFail(parameters, 0, context);
+        final Object value = ExpressionFunctionParameter.VALUE.getOrFail(parameters, 0);
 
         return value instanceof LocalDate ||
                 value instanceof LocalDateTime;
