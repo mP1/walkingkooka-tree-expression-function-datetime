@@ -50,7 +50,7 @@ final class NumberExpressionFunctionYearFrac<C extends ExpressionEvaluationConte
         this.checkParameterCount(parameters);
 
         return context.convertOrFail(
-                DATE.getOrFail(parameters, 0),
+                DATE.getOrFail(parameters, 0, context),
                 ExpressionNumber.class
         );
     }

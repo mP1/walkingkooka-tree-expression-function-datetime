@@ -82,9 +82,9 @@ final class LocalTimeExpressionFunctionTime<C extends ExpressionEvaluationContex
                            final C context) {
         this.checkParameterCount(parameters);
 
-        final int hour = component(HOUR, parameters, 0);
-        final int minute = component(MINUTE, parameters, 1);
-        final int second = component(SECOND, parameters, 2);
+        final int hour = component(HOUR, parameters, 0, context);
+        final int minute = component(MINUTE, parameters, 1, context);
+        final int second = component(SECOND, parameters, 2, context);
 
         // the of factory does not support lenient/rolling of hour or second components
         return LocalTime.MIDNIGHT
@@ -93,10 +93,11 @@ final class LocalTimeExpressionFunctionTime<C extends ExpressionEvaluationContex
                 .plusSeconds(second);
     }
 
-    private static int component(final ExpressionFunctionParameter<ExpressionNumber> parameter,
-                                 final List<Object> parameters,
-                                 final int index) {
-        final int value = parameter.getOrFail(parameters, index)
+    private static <C extends ExpressionEvaluationContext> int component(final ExpressionFunctionParameter<ExpressionNumber> parameter,
+                                                                         final List<Object> parameters,
+                                                                         final int index,
+                                                                         final C context) {
+        final int value = parameter.getOrFail(parameters, index, context)
                 .intValue();
         if (value < 0) {
             throw new IllegalArgumentException("Invalid " + parameter.name() + " " + value + " < 0");
