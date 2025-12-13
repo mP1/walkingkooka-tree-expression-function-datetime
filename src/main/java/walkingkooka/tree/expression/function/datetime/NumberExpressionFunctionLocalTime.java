@@ -104,7 +104,7 @@ final class NumberExpressionFunctionLocalTime<C extends ExpressionEvaluationCont
         return context.expressionNumberKind()
                 .create(
                         this.mapper.apply(
-                                TIME.getOrFail(parameters, 0, context)
+                                TIME.getOrFail(parameters, 0)
                         )
                 );
     }

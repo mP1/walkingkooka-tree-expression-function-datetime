@@ -45,7 +45,7 @@ final class NumberExpressionFunctionIsoWeekNum<C extends ExpressionEvaluationCon
                                   final C context) {
         return context.expressionNumberKind()
                 .create(
-                        DATE.getOrFail(parameters, 0, context)
+                        DATE.getOrFail(parameters, 0)
                                 .get(
                                         IsoFields.WEEK_OF_WEEK_BASED_YEAR
                                 )

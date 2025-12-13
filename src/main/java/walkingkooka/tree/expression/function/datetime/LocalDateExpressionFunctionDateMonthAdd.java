@@ -45,8 +45,8 @@ final class LocalDateExpressionFunctionDateMonthAdd<C extends ExpressionEvaluati
                            final C context) {
         this.checkParameterCount(parameters);
 
-        final LocalDate date = DATE.getOrFail(parameters, 0, context);
-        final long months = MONTHS.getOrFail(parameters, 1, context)
+        final LocalDate date = DATE.getOrFail(parameters, 0);
+        final long months = MONTHS.getOrFail(parameters, 1)
                 .longValue();
 
         return date.plusMonths(months);

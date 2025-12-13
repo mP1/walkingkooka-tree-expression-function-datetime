@@ -28,7 +28,6 @@ import java.time.LocalDate;
 import java.time.temporal.TemporalField;
 import java.time.temporal.WeekFields;
 import java.util.List;
-import java.util.Optional;
 import java.util.function.BiFunction;
 
 /**
@@ -217,24 +216,20 @@ final class NumberExpressionFunctionLocalDateWeekdayWeekNum<C extends Expression
         return context.expressionNumberKind()
                 .create(
                         this.mapper.apply(
-                                DATE.getOrFail(parameters, 0, context),
-                                TYPE.getOrFail(
+                                DATE.getOrFail(parameters, 0),
+                                TYPE.get(
                                                 parameters,
-                                                1,
-                                        context
+                                                1
+                                        ).orElseGet(
+                                                () -> context.expressionNumberKind()
+                                                        .one()
                                         ).intValue()
                         )
                 );
     }
 
     final static ExpressionFunctionParameter<ExpressionNumber> TYPE = ExpressionFunctionParameterName.with("type")
-            .optional(ExpressionNumber.class)
-            .setDefaultValue((c) ->
-                    Optional.of(
-                            c.expressionNumberKind()
-                                    .one()
-                    )
-            );
+            .optional(ExpressionNumber.class);
 
     private final BiFunction<LocalDate, Integer, Integer> mapper;
 

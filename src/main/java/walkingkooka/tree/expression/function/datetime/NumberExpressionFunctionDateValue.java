@@ -51,7 +51,7 @@ final class NumberExpressionFunctionDateValue<C extends ExpressionEvaluationCont
         this.checkParameterCount(parameters);
 
         return context.convertOrFail(
-                DATE.getOrFail(parameters, 0, context),
+                DATE.getOrFail(parameters, 0),
                 ExpressionNumber.class
         );
     }

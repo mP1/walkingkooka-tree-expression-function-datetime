@@ -98,7 +98,7 @@ final class NumberExpressionFunctionLocalDateComponent<C extends ExpressionEvalu
         return context.expressionNumberKind()
                 .create(
                         this.mapper.apply(
-                                DATE.getOrFail(parameters, 0, context)
+                                DATE.getOrFail(parameters, 0)
                         )
                 );
     }

@@ -78,13 +78,13 @@ final class LocalDateExpressionFunctionDate<C extends ExpressionEvaluationContex
                            final C context) {
         this.checkParameterCount(parameters);
 
-        int year = component(YEAR, parameters, 0, context);
+        int year = component(YEAR, parameters, 0);
         if (year <= 99) {
             year = context.twoToFourDigitYear(year);
         }
 
-        final int month = component(MONTH, parameters, 1, context);
-        final int day = component(DAY, parameters, 2, context);
+        final int month = component(MONTH, parameters, 1);
+        final int day = component(DAY, parameters, 2);
 
         // the of factory does not support lenient/rolling of day or month components
         return LocalDate.of(
@@ -95,11 +95,10 @@ final class LocalDateExpressionFunctionDate<C extends ExpressionEvaluationContex
                 .plusDays(day - 1);
     }
 
-    private static <C extends ExpressionEvaluationContext> int component(final ExpressionFunctionParameter<ExpressionNumber> parameter,
-                                                                         final List<Object> parameters,
-                                                                         final int index,
-                                                                         final C context) {
-        final int value = parameter.getOrFail(parameters, index, context)
+    private static int component(final ExpressionFunctionParameter<ExpressionNumber> parameter,
+                                 final List<Object> parameters,
+                                 final int index) {
+        final int value = parameter.getOrFail(parameters, index)
                 .intValue();
         if (value < 0) {
             throw new IllegalArgumentException("Invalid " + parameter.name() + " " + value + " < 0");
