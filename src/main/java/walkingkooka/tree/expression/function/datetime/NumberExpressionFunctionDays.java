@@ -46,8 +46,8 @@ final class NumberExpressionFunctionDays<C extends ExpressionEvaluationContext> 
                                   final C context) {
         this.checkParameterCount(parameters);
 
-        final LocalDate date1 = DATE1.getOrFail(parameters, 0);
-        final LocalDate date2 = DATE2.getOrFail(parameters, 1);
+        final LocalDate date1 = DATE1.getOrFail(parameters, 0, context);
+        final LocalDate date2 = DATE2.getOrFail(parameters, 1, context);
 
         return context.expressionNumberKind()
                 .create(
