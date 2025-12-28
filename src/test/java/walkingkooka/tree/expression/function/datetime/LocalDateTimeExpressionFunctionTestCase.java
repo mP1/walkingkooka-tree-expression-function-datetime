@@ -34,7 +34,7 @@ public abstract class LocalDateTimeExpressionFunctionTestCase<F extends LocalDat
         return new FakeExpressionEvaluationContext() {
             @Override
             public LocalDateTime now() {
-                return NOW;
+                return LocalDateTimeExpressionFunctionTestCase.NOW;
             }
         };
     }
