@@ -45,7 +45,7 @@ public abstract class LocalDateExpressionFunctionTestCase<F extends LocalDateExp
 
             @Override
             public LocalDateTime now() {
-                return NOW;
+                return LocalDateExpressionFunctionTestCase.NOW;
             }
 
             @Override
