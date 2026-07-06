@@ -6,14 +6,10 @@
 ![](https://tokei.rs/b1/github/mP1/walkingkooka-tree-expression-function-datetime)
 [![J2CL compatible](https://img.shields.io/badge/J2CL-compatible-brightgreen.svg)](https://github.com/mP1/j2cl-central)
 
-
-
 # walkingkooka-tree-expression-function-datetime
 A collection of ExpressionFunction(s) that operate and return date or time like results.
 
-
-
-## Available functions
+## [Functions](https://github.com/mP1/walkingkooka-tree/blob/master/src/main/java/walkingkooka/tree/expression/function/ExpressionFunction.java)
 
 Many more functions are outstanding and remain TODO.
 
