@@ -19,7 +19,6 @@ package walkingkooka.tree.expression.function.datetime;
 
 import org.junit.jupiter.api.Test;
 import walkingkooka.reflect.ClassTesting2;
-import walkingkooka.reflect.JavaVisibility;
 import walkingkooka.reflect.TypeNameTesting;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionEvaluationContexts;
@@ -49,11 +48,6 @@ public abstract class ExpressionFunctionTestCase<F extends ExpressionFunction<T,
                 ExpressionEvaluationContexts.fake(),
                 !(function instanceof LocalDateExpressionFunctionToday || function instanceof LocalDateTimeExpressionFunctionNow)
         );
-    }
-
-    @Override
-    public final JavaVisibility typeVisibility() {
-        return JavaVisibility.PACKAGE_PRIVATE;
     }
 
     @Override
