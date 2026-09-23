@@ -24,11 +24,11 @@ import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionEvaluationContexts;
 import walkingkooka.tree.expression.ExpressionPurityTesting;
 import walkingkooka.tree.expression.function.ExpressionFunction;
-import walkingkooka.tree.expression.function.ExpressionFunctionTesting;
+import walkingkooka.tree.expression.function.ExpressionFunctionTesting2;
 
 import java.time.LocalDateTime;
 
-public abstract class ExpressionFunctionTestCase<F extends ExpressionFunction<T, ExpressionEvaluationContext>, T> implements ExpressionFunctionTesting<F, T, ExpressionEvaluationContext>,
+public abstract class ExpressionFunctionTestCase<F extends ExpressionFunction<T, ExpressionEvaluationContext>, T> implements ExpressionFunctionTesting2<F, T, ExpressionEvaluationContext>,
         ExpressionPurityTesting,
         TypeNameTesting<F>,
         ClassTesting2<F> {
